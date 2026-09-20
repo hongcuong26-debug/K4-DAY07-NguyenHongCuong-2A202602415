@@ -94,7 +94,7 @@ chunks.extend(prefix + child for child in children)
 ### So sánh cùng dữ liệu và truy vấn
 
 Backend: **mock:md5-64-v1**, top_k=3, cùng file gold, cùng responder, cùng
-metadata filter; chỉ thay chunker. Timestamp UTC: 2026-09-20T03:38:19.521324+00:00.
+metadata filter; chỉ thay chunker. Timestamp UTC: 2026-09-20T04:34:28.341948+00:00.
 
 | Phân công | Chiến lược | Chunk | Avg length | Doc-only /10 | Nội dung /10 | Proxy agent /10 |
 |---|---|---|---|---|---|---|

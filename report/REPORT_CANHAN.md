@@ -1,7 +1,7 @@
 # Báo cáo cá nhân — Lab 07
 
 **Họ tên:** Nguyễn Hồng Cường — **MSSV:** 2A202602415
-**Lớp:** K4-L3B — **Nhóm:** Đạt – Cường – Trang
+**Lớp:** K4-L3B — **Nhóm:** G18
 **Ngày thực hiện:** 20/09/2026 — **Vai trò:** R2, thiết kế benchmark
 **Chiến lược riêng:** RecursiveChunker, chunk_size=500, không overlap.
 
@@ -138,7 +138,7 @@ sự trùng hợp trong thí nghiệm này. Muốn đánh giá ngữ nghĩa cầ
 ## 5. Kết quả truy xuất riêng
 
 Chạy `python bench.py` (mặc định recursive), backend **mock:md5-64-v1**;
-thời điểm UTC 2026-09-20T03:38:17.325220+00:00. Chỉ dùng corpus Shopee, không trộn dữ liệu mẫu.
+thời điểm UTC 2026-09-20T04:34:27.130837+00:00. Chỉ dùng corpus Shopee, không trộn dữ liệu mẫu.
 Nạp **39 chunk**, trung bình **263.31 ký tự**.
 
 | # | Câu hỏi | Top-3: chunk (cosine) | Hạng có đủ đáp án | Điểm nội dung /2 |

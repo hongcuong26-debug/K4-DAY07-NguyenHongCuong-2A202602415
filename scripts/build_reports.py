@@ -62,7 +62,7 @@ correct = sum(q["evidence_rank"] is not None for q in mine["queries"])
 personal_text = f"""# Báo cáo cá nhân — Lab 07
 
 **Họ tên:** Nguyễn Hồng Cường — **MSSV:** 2A202602415
-**Lớp:** K4-L3B — **Nhóm:** Đạt – Cường – Trang
+**Lớp:** K4-L3B — **Nhóm:** G18
 **Ngày thực hiện:** 20/09/2026 — **Vai trò:** R2, thiết kế benchmark
 **Chiến lược riêng:** RecursiveChunker, chunk_size=500, không overlap.
 

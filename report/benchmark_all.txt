@@ -1,4 +1,4 @@
-Run UTC: 2026-09-20T03:38:19.521324+00:00
+Run UTC: 2026-09-20T04:34:28.341948+00:00
 Embedding backend: mock:md5-64-v1
 Agent: offline extractive baseline (not a generative LLM).
 Automatic marker scores need human answer review; mock scores do not measure semantics.
