@@ -344,7 +344,8 @@ seller, giữ benchmark cố định và chạy model đa ngữ với cache nộ
 - [x] Metadata/manifest và gold được script kiểm tra.
 - [ ] Giảng viên chấp nhận corpus tóm lược hoặc thay bằng corpus được phép dùng.
 - [ ] Đạt/Trang xác nhận kết quả bài riêng; hoàn thành demo.
-- [ ] Push GitHub thành công và nộp link/rating trên vlearn.
+- [x] Push GitHub thành công lên nhánh main ngày 20/09/2026.
+- [ ] Nộp link/rating trên vlearn.
 
 Repo dự kiến nộp: https://github.com/hongcuong26-debug/K4-DAY07-NguyenHongCuong-2A202602415
 """
