@@ -1,0 +1,48 @@
+[
+  {
+    "id": "Q1",
+    "query": "Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không?",
+    "metadata_filter": {"audience": "seller"},
+    "gold_doc_id": "seller-phan-hoi",
+    "gold_answer": "Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước.",
+    "evidence_phrases": ["miễn phí chiều hoàn cho shop", "Tự sắp xếp"],
+    "source_section": "7.2, điểm 5",
+    "requires_filter": true
+  },
+  {
+    "id": "Q2",
+    "query": "Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào?",
+    "metadata_filter": null,
+    "gold_doc_id": "buyer-dieu-kien",
+    "gold_answer": "24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng.",
+    "evidence_phrases": ["24 giờ", "ngoại trừ khiếu nại chưa nhận hàng"],
+    "source_section": "1.2"
+  },
+  {
+    "id": "Q3",
+    "query": "Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi?",
+    "metadata_filter": null,
+    "gold_doc_id": "buyer-gui-yeu-cau",
+    "gold_answer": "Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi.",
+    "evidence_phrases": ["mô tả tình trạng", "ảnh hoặc video", "email liên hệ"],
+    "source_section": "1, Cách 1, bước 7-8"
+  },
+  {
+    "id": "Q4",
+    "query": "Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua?",
+    "metadata_filter": null,
+    "gold_doc_id": "buyer-gui-hang",
+    "gold_answer": "Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí.",
+    "evidence_phrases": ["hẹn lấy tại nhà", "bưu cục do hệ thống đề xuất", "hai lựa chọn đầu miễn phí"],
+    "source_section": "1.1"
+  },
+  {
+    "id": "Q5",
+    "query": "Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt?",
+    "metadata_filter": null,
+    "gold_doc_id": "buyer-nhan-tien",
+    "gold_answer": "Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.",
+    "evidence_phrases": ["chính tài khoản thẻ đã trả tiền", "7-14 ngày làm việc"],
+    "source_section": "Bảng 1"
+  }
+]

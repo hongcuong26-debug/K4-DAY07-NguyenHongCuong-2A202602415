@@ -1,0 +1,8 @@
+﻿OK buyer-dieu-kien.md: 773 characters, buyer
+OK buyer-gui-hang.md: 808 characters, buyer
+OK buyer-gui-yeu-cau.md: 766 characters, buyer
+OK buyer-nhan-tien.md: 835 characters, buyer
+OK seller-phan-hoi.md: 820 characters, seller
+OK manifest 1:1; metadata; five gold answers present; buyer/seller split
+OK saved hashes match current files; Q1 A/B changes candidates for all three strategies
+OK regressions: preserved text, merging, heading, prefilter, metadata isolation, delete, empty agent, evidence scoring

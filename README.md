@@ -1,5 +1,50 @@
 # K4-L3B — Ngày 7: Nền Tảng Dữ Liệu, Embedding & Vector Store
 
+## Bài thực hiện — Nguyễn Hồng Cường, 2A202602415
+
+Chủ đề: **Chính sách Trả hàng và Hoàn tiền Shopee**. R1 Đạt (fixed-size),
+R2 Cường (recursive), R3 Trang (heading). Phần code đã chạy **42/42 test gốc**.
+
+- [Báo cáo cá nhân](report/REPORT_CANHAN.md), [báo cáo nhóm](report/REPORT_NHOM.md).
+- [Kết quả riêng Cường](ket_qua_benchmark.txt), [so sánh ba cấu hình và A/B](report/benchmark_all.txt).
+- [Nguồn và giới hạn corpus](report/DATA_PROVENANCE.md): 5 bản ghi tóm lược có nguồn,
+  **không phải 5 bản chính sách gốc đã được cấp phép tái sử dụng**. Cần xác nhận
+  giảng viên chấp nhận hình thức này trước khi coi phần dữ liệu hoàn tất.
+- Benchmark hiện dùng **mock embedding** và **responder trích đoạn offline**;
+  không trình bày các điểm này như chất lượng LLM/embedding ngữ nghĩa thật.
+
+Chạy trong PowerShell, tại thư mục repo (không cần activate):
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest tests/ -v
+.\.venv\Scripts\python.exe scripts/validate_lab.py
+.\.venv\Scripts\python.exe main.py "Chunking là gì?"
+.\.venv\Scripts\python.exe bench.py
+.\.venv\Scripts\python.exe bench.py --strategy all --output report/benchmark_all.txt
+```
+
+Máy này có Python 3.12.3 sẵn và `.venv` cục bộ; ở máy khác tạo venv với Python
+3.11 (khuyến nghị) hoặc 3.10+, rồi cài `requirements.txt`. Không commit `.venv`.
+
+Để đo lại với embedding thật:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-local.txt
+.\.venv\Scripts\python.exe bench.py --provider local --strategy all --output report/benchmark_local.txt
+```
+
+Có thể chọn `--provider openai` hoặc `--provider gemini` sau khi cài SDK và tự đặt
+key trong `.env`. Vector cache theo backend/model và SHA-256 nội dung nằm trong
+`.cache/` được Git bỏ qua. Backend thật thiếu thư viện/key hoặc lỗi sẽ báo lỗi rõ,
+không âm thầm ghi số liệu mock dưới tên model thật. `main.py` vẫn giữ demo starter.
+
+`scripts/build_reports.py` tạo báo cáo từ các log mặc định đang lưu. Nếu thay corpus,
+query hay backend, chạy lại cả benchmark cá nhân và ba cấu hình rồi rà soát phần
+nhận xét trước khi nộp; các diễn giải failure case không tự thay thế bằng suy đoán.
+
+Nhóm cần hoàn thành demo, Đạt/Trang chạy bài riêng và nộp link repo/rating trên
+vlearn. Không đánh dấu các bước đó đã diễn ra chỉ vì có kịch bản trong báo cáo.
+
 > Bản K4-L3B của Lab 07 (chủ đề: chính sách thương mại điện tử). Hướng dẫn Codelabs để tải lên nằm tại `../codelabs/day7-lab-data-foundations.md`; yêu cầu Giai đoạn 2 riêng xem [K4_VARIANT.md](K4_VARIANT.md). Lớp song song L3A dùng cùng bài học nhưng crawl chủ đề dịch vụ/quy định đại học.
 
 ---

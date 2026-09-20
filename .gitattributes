@@ -1,0 +1,6 @@
+# Keep corpus/query SHA-256 values stable across Windows/Linux checkouts.
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
