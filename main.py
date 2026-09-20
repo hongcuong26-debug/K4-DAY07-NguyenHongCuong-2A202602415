@@ -29,6 +29,9 @@ SAMPLE_FILES = [
     "data/vi_retrieval_notes.md",
 ]
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 
 def load_documents_from_files(file_paths: list[str]) -> list[Document]:
     """Load documents from file paths for the manual demo."""
