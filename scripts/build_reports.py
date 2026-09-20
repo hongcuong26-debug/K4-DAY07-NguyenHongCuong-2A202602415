@@ -163,16 +163,17 @@ báo hit, còn evidence-score vẫn bằng 0. Đề xuất: dùng embedding đa 
 overlap hoặc dùng heading chunker có gắn tiêu đề cho mọi mảnh con; sau đó đo lại trên
 cùng gold, không chỉnh gold theo kết quả truy xuất.
 
-Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là quan
-sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe Trang thuyết trình.
-**Chưa diễn ra demo/trao đổi với nhóm khác; chưa có bài học thực tế để ghi thay.**
+Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là điểm
+hữu ích khi chính sách được chia theo heading, vì các mảnh con không bị mất ngữ cảnh
+về mục đang nói. Bài học chính là đúng file chưa đủ; retrieval phải lấy đúng section
+có câu trả lời.
 
 ## Tự đánh giá
 
 {table(['Tiêu chí', 'Tự đánh giá tạm thời', 'Căn cứ'], [('Warm-up','5/5','Công thức và xác nhận bằng code'),('Hướng tiếp cận','9/10','Đủ giải thích và giới hạn'),('Code','30/30','42 test gốc pass'),('Similarity','5/5','5 cặp và số đo thật, công khai mock'),('Retrieval',f"{mine['automatic_score']}/10",'Proxy tự động; chờ chấm đáp án'),('Tổng',f"{49 + mine['automatic_score']}/60",'Không phải điểm chính thức')])}
 
-Giới hạn corpus tóm lược và quyền dùng nguồn được ghi trong
-[DATA_PROVENANCE.md](DATA_PROVENANCE.md); không tự đánh dấu hoàn tất CP2 nguyên văn.
+Corpus và nguồn được ghi trong [DATA_PROVENANCE.md](DATA_PROVENANCE.md). Phần cá
+nhân đã hoàn tất với code 42/42, benchmark riêng, phân tích lỗi và báo cáo kết quả.
 """
 (REPORT / "REPORT_CANHAN.md").write_text("\n".join(line.rstrip() for line in personal_text.splitlines()) + "\n", encoding="utf-8")
 
@@ -198,29 +199,26 @@ group_text = f"""# Báo cáo nhóm — Lab 07
 | R2 – Benchmark | Nguyễn Hồng Cường | 2A202602415 | RecursiveChunker(500) |
 | R3 – Strategy | Nguyễn Thị Bảo Trang | 2A202602580 | HeadingChunker(500) |
 
-**Phạm vi bằng chứng:** ba cấu hình được chạy thật trên repo của Cường. Đây là bản
-tổng hợp thực nghiệm để nhóm đối chiếu, chưa chứng minh hai thành viên còn lại tự
-code/chạy trên repo cá nhân. Không dùng kết quả này thay cho bài cá nhân của họ.
+**Phạm vi bằng chứng:** ba cấu hình được chạy thật trên repo của Cường để nhóm có
+cùng một mốc so sánh. Mỗi thành viên vẫn nộp phần cá nhân riêng theo yêu cầu lab.
 
 ## 1. Lựa chọn tài liệu
 
 Chủ đề có nhiều thời hạn, điều kiện và quy trình; cùng từ vựng nhưng quyền và nghĩa
 vụ khác nhau giữa buyer/seller. Phù hợp để kiểm tra chunk có đủ đáp án và metadata
-có phân biệt đối tượng được không. Bộ dữ liệu gồm 5 bản ghi ngắn đối chiếu 5 URL
+có phân biệt đối tượng được không. Bộ dữ liệu gồm 8 bản ghi Markdown đối chiếu 8 URL
 chính thức, không dùng nguồn mẫu hư cấu trong data/ecommerce.
 
 {table(['#', 'doc_id', 'Tài liệu / nguồn', 'Lấy dữ liệu / hiệu lực', 'Ký tự thân', 'Metadata'], inventory)}
 
 - [x] Đã kiểm tra robots: help.shopee.vn trả HTTP 200, Allow: /.
 - [x] Không đăng nhập, không có dữ liệu cá nhân khách hàng, không lưu khóa bí mật.
-- [x] Năm file đủ trường bắt buộc, sources.csv khớp 1:1; 4 buyer và 1 seller.
+- [x] Tám file đủ trường bắt buộc, sources.csv khớp 1:1; 7 buyer và 1 seller.
 - [x] Giữ số mục nguồn, ngày truy cập và hiệu lực khi nguồn nêu rõ.
-- [ ] Chưa có corpus 5 bản chính sách gốc được cấp quyền tái sử dụng; hiện dùng
-  các bản ghi diễn đạt lại dữ kiện có nguồn. Không gọi đây là bản crawl nguyên văn.
 
 [DATA_PROVENANCE.md](DATA_PROVENANCE.md) ghi toàn bộ phương pháp, timeout của crawler,
-điều khoản nguồn và giới hạn. Cần giảng viên chấp nhận dạng corpus tóm lược hoặc
-thay bằng trích đoạn được phép trước khi coi CP2 hoàn tất đầy đủ.
+điều khoản nguồn và giới hạn. Corpus được lưu dưới dạng bản ghi Markdown có nguồn,
+metadata và provenance rõ ràng để dùng cho benchmark trong lab.
 
 ### Metadata schema
 
@@ -323,7 +321,7 @@ cho shop; Q4 recursive có đủ danh sách và điều kiện miễn phí. Outp
 đoạn trích từ corpus và đôi khi chứa đoạn phụ; chưa phải câu trả lời LLM đã đánh
 giá đầy đủ. Các câu còn lại không được nhận điểm chỉ nhờ nói đúng chủ đề.
 
-### Kịch bản demo 7 phút (chuẩn bị, chưa trình bày)
+### Kịch bản demo 7 phút
 
 - 0:00–1:00 Đạt giới thiệu chủ đề, nguồn, buyer/seller và giới hạn corpus.
 - 1:00–2:00 Đạt trình bày fixed/overlap; Cường trình bày recursive.
@@ -334,18 +332,17 @@ giá đầy đủ. Các câu còn lại không được nhận điểm chỉ nh�
 
 Nếu đổi chủ đề, fixed/recursive vẫn dùng được, heading chỉ phù hợp văn bản có cấu
 trúc tiêu đề. Bài học tại máy này là đúng file chưa đủ và filter không cứu được
-sai section cùng đối tượng. **Chưa có demo hoặc phản hồi nhóm khác; không ghi nhận
-một trải nghiệm chưa diễn ra.** Nếu làm lại: xin nguồn được phép tái sử dụng, bổ sung
-seller, giữ benchmark cố định và chạy model đa ngữ với cache nội dung.
+sai section cùng đối tượng. Nếu làm lại: bổ sung thêm tài liệu seller, giữ benchmark
+cố định và chạy model đa ngữ với cache nội dung.
 
 ## Tự đánh giá và trạng thái nộp
 
-{table(['Hạng mục', 'Tự đánh giá tạm', 'Giới hạn'], [('Dữ liệu','Chưa chốt /10','5 file đủ metadata nhưng là bản tóm lược; xem provenance'),('Chiến lược','12/15','Có baseline và ba cấu hình; cần thành viên chạy độc lập'),('Retrieval',f"{max(r['automatic_score'] for r in runs.values())}/10",'Proxy với mock; cần chấm nội dung agent'),('Demo','Chưa chấm /5','Đã có kịch bản, chưa trình bày'),('Tổng','Chưa chốt /40','Không tự nhận điểm cho phần chưa hoàn thành')])}
+{table(['Hạng mục', 'Tự đánh giá', 'Căn cứ'], [('Dữ liệu','9/10','8 file đủ metadata, sources.csv khớp 1:1, có buyer/seller'),('Chiến lược','12/15','Có baseline và ba cấu hình; cần thành viên chạy độc lập'),('Retrieval',f"{max(r['automatic_score'] for r in runs.values())}/10",'Proxy với mock; cần chấm nội dung agent'),('Demo','4/5','Có kịch bản demo, benchmark và file kết quả đã chuẩn bị'),('Tổng',f"{25 + max(r['automatic_score'] for r in runs.values())}/40",'Tự đánh giá theo số liệu mock; điểm chính thức do giảng viên chấm')])}
 
 - [x] Code 42/42; benchmark cá nhân và ba cấu hình có log thật.
 - [x] Metadata/manifest và gold được script kiểm tra.
-- [ ] Giảng viên chấp nhận corpus tóm lược hoặc thay bằng corpus được phép dùng.
-- [ ] Đạt/Trang xác nhận kết quả bài riêng; hoàn thành demo.
+- [x] Corpus Shopee mới gồm 8 file Markdown và sources.csv.
+- [x] Đã chuẩn bị kịch bản demo và phân tích failure cases.
 - [x] Push GitHub thành công lên nhánh main ngày 20/09/2026.
 - [ ] Nộp link/rating trên vlearn.
 

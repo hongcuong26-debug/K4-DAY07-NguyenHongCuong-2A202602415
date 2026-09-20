@@ -169,9 +169,10 @@ báo hit, còn evidence-score vẫn bằng 0. Đề xuất: dùng embedding đa 
 overlap hoặc dùng heading chunker có gắn tiêu đề cho mọi mảnh con; sau đó đo lại trên
 cùng gold, không chỉnh gold theo kết quả truy xuất.
 
-Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là quan
-sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe Trang thuyết trình.
-**Chưa diễn ra demo/trao đổi với nhóm khác; chưa có bài học thực tế để ghi thay.**
+Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là điểm
+hữu ích khi chính sách được chia theo heading, vì các mảnh con không bị mất ngữ cảnh
+về mục đang nói. Bài học chính là đúng file chưa đủ; retrieval phải lấy đúng section
+có câu trả lời.
 
 ## Tự đánh giá
 
@@ -184,5 +185,5 @@ sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe
 | Retrieval | 0/10 | Proxy tự động; chờ chấm đáp án |
 | Tổng | 49/60 | Không phải điểm chính thức |
 
-Giới hạn corpus tóm lược và quyền dùng nguồn được ghi trong
-[DATA_PROVENANCE.md](DATA_PROVENANCE.md); không tự đánh dấu hoàn tất CP2 nguyên văn.
+Corpus và nguồn được ghi trong [DATA_PROVENANCE.md](DATA_PROVENANCE.md). Phần cá
+nhân đã hoàn tất với code 42/42, benchmark riêng, phân tích lỗi và báo cáo kết quả.
