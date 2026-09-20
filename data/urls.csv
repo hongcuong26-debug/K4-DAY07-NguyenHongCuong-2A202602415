@@ -1,6 +1,9 @@
 url,doc_id,title,audience,category,language,document_version,license_or_permission
-https://help.shopee.vn/portal/4/article/188931,buyer-dieu-kien,Điều kiện và thời hạn yêu cầu của người mua,buyer,eligibility,vi,not-stated,public-source
-https://help.shopee.vn/portal/4/article/189477,buyer-gui-hang,Cách gửi lại sản phẩm và phí vận chuyển,buyer,return-shipping,vi,not-stated,public-source
-https://help.shopee.vn/portal/4/article/79233,buyer-gui-yeu-cau,Thao tác tạo yêu cầu trên ứng dụng,buyer,procedure,vi,not-stated,public-source
-https://help.shopee.vn/portal/4/article/189473,buyer-nhan-tien,Tiền hoàn về đâu và bao lâu,buyer,refund-payment,vi,not-stated,public-source
-https://help.shopee.vn/portal/4/article/77251,seller-phan-hoi,Phản hồi và trách nhiệm của người bán,seller,dispute,vi,2026-03-11,public-source
+https://help.shopee.vn/portal/4/article/77251,shopee-seller-return-refund-rights,"Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền",seller,seller-rights,vi,2026-03-11,public-source
+https://help.shopee.vn/portal/4/article/188931,shopee-return-refund-general,Quy định chung về trả hàng và hoàn tiền,buyer,return-conditions,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/79233,shopee-submit-return-request,Cách gửi yêu cầu trả hàng và hoàn tiền,buyer,return-process,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/190242,shopee-handle-return-request,Shopee xử lý yêu cầu trả hàng và hoàn tiền,buyer,return-process,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/189477,shopee-return-shipping-fees,Cách gửi hàng hoàn trả và phí vận chuyển,buyer,return-shipping,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/189473,shopee-refund-timing,Thời gian nhận tiền hoàn theo phương thức thanh toán,buyer,refund-timing,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/79465,shopee-restricted-returns,Danh mục sản phẩm hạn chế trả hàng,buyer,return-exceptions,vi,not-stated,public-source
+https://help.shopee.vn/portal/4/article/190387,shopee-instant-refund-offer,Người mua phản hồi đề xuất hoàn tiền ngay của người bán,buyer,refund-process,vi,not-stated,public-source

@@ -138,35 +138,36 @@ sự trùng hợp trong thí nghiệm này. Muốn đánh giá ngữ nghĩa cầ
 ## 5. Kết quả truy xuất riêng
 
 Chạy `python bench.py` (mặc định recursive), backend **mock:md5-64-v1**;
-thời điểm UTC 2026-09-20T03:16:04.488002+00:00. Chỉ dùng corpus Shopee, không trộn dữ liệu mẫu.
-Nạp **11 chunk**, trung bình **363.82 ký tự**.
+thời điểm UTC 2026-09-20T03:38:17.325220+00:00. Chỉ dùng corpus Shopee, không trộn dữ liệu mẫu.
+Nạp **39 chunk**, trung bình **263.31 ký tự**.
 
 | # | Câu hỏi | Top-3: chunk (cosine) | Hạng có đủ đáp án | Điểm nội dung /2 |
 |---|---|---|---|---|
-| Q1 | Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không? | seller-phan-hoi#1 (0.1759); seller-phan-hoi#0 (-0.0091) | 1 | 2 |
-| Q2 | Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào? | buyer-nhan-tien#1 (0.1340); buyer-gui-yeu-cau#1 (0.1037); seller-phan-hoi#1 (0.0546) | Không có | 0 |
-| Q3 | Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi? | buyer-nhan-tien#0 (0.2060); buyer-gui-hang#0 (0.1566); buyer-dieu-kien#1 (0.1321) | Không có | 0 |
-| Q4 | Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua? | buyer-dieu-kien#0 (0.1764); buyer-dieu-kien#1 (0.1426); buyer-gui-hang#0 (0.0815) | 3 | 1 |
-| Q5 | Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt? | buyer-gui-hang#2 (0.1123); buyer-gui-yeu-cau#0 (0.0783); buyer-nhan-tien#1 (0.0595) | Không có | 0 |
+| Q1 | Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không? | shopee-seller-return-refund-rights#3 (0.0824); shopee-seller-return-refund-rights#7 (0.0824); shopee-seller-return-refund-rights#11 (0.0824) | Không có | 0 |
+| Q2 | Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào? | shopee-submit-return-request#0 (0.2489); shopee-seller-return-refund-rights#8 (0.2457); shopee-seller-return-refund-rights#10 (0.1880) | Không có | 0 |
+| Q3 | Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì? | shopee-restricted-returns#2 (0.2317); shopee-seller-return-refund-rights#9 (0.2181); shopee-submit-return-request#2 (0.2055) | Không có | 0 |
+| Q4 | Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng. | shopee-restricted-returns#2 (0.3018); shopee-seller-return-refund-rights#8 (0.2250); shopee-instant-refund-offer#1 (0.2056) | Không có | 0 |
+| Q5 | Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền? | shopee-instant-refund-offer#1 (0.1904); shopee-seller-return-refund-rights#10 (0.1902); shopee-handle-return-request#1 (0.1676) | Không có | 0 |
 
 | # | Top-1: nội dung đầu | Agent: đoạn trả về đầu | Nhận xét |
 |---|---|---|---|
-| Q1 | Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại | Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không | Có markers; cần kiểm tra đủ nghĩa và nguồn |
-| Q2 | Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngà | Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về  | Không có đủ chứng cứ gold |
-| Q3 | ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền  Thời gian dưới đây tính sau khi Shopee chấp | Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu. [1] Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu  | Không có đủ chứng cứ gold |
-| Q4 | ## 1.1. Nguyên tắc chung  Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người | Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi | Có markers; cần kiểm tra đủ nghĩa và nguồn |
-| Q5 | Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành c | Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần  | Không có đủ chứng cứ gold |
+| Q1 |   | Không tìm thấy thông tin. | Không có đủ chứng cứ gold |
+| Q2 | # Cách gửi yêu cầu trả hàng và hoàn tiền  ## Gửi từ đơn hàng  Trong ứng dụng Shopee, vào **Tôi → Chờ | Trong ứng dụng Shopee, vào **Tôi → Chờ giao hàng/Đã giao**, chọn đơn cần xử lý và bấm **Trả hàng/Hoàn tiền**. Chọn tình huống đã nhận hàng nhưng có vấ | Không có đủ chứng cứ gold |
+| Q3 | Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể | Trang hướng dẫn cho biết yêu cầu thường được xử lý trong **3–5 ngày làm việc**; kết quả được thông báo qua ứng dụng hoặc email. Nếu yêu cầu được chấp  | Không có đủ chứng cứ gold |
+| Q4 | Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể | Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với | Không có đủ chứng cứ gold |
+| Q5 | Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nế | Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người m | Không có đủ chứng cứ gold |
 
-Có **2/5** câu có chunk đủ bằng chứng trong top-3. Điểm chỉ theo file là
-**4/10**, theo nội dung là **3/10**.
-Điểm tự động sau kiểm tra marker trong câu trả lời là **3/10**;
+Có **0/5** câu có chunk đủ bằng chứng trong top-3. Điểm chỉ theo file là
+**3/10**, theo nội dung là **0/10**.
+Điểm tự động sau kiểm tra marker trong câu trả lời là **0/10**;
 đây là điểm hỗ trợ đối chiếu, không phải điểm giảng viên hay chứng minh LLM trả lời
 đúng. Xem toàn bộ câu trả lời và nguồn trong [ket_qua_benchmark.txt](../ket_qua_benchmark.txt).
 
-Q5 là failure case rõ: lấy được buyer-nhan-tien nhưng lấy section về ví và lưu ý,
-không lấy đoạn thẻ. Doc-only báo hit nhưng câu trả lời không có mốc cần hỏi. Đề xuất:
-embedding đa ngữ thật, truy vấn lại theo thẻ và reranker; sau đó đo lại trên cùng
-gold, không chỉnh gold theo kết quả truy xuất.
+Q1 là failure case rõ của mock + recursive: filter seller đưa đúng file người bán vào
+top-3, nhưng các chunk được xếp hạng không chứa đủ cụm chứng cứ cần thiết. Doc-only
+báo hit, còn evidence-score vẫn bằng 0. Đề xuất: dùng embedding đa ngữ thật, tăng
+overlap hoặc dùng heading chunker có gắn tiêu đề cho mọi mảnh con; sau đó đo lại trên
+cùng gold, không chỉnh gold theo kết quả truy xuất.
 
 Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là quan
 sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe Trang thuyết trình.
@@ -180,8 +181,8 @@ sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe
 | Hướng tiếp cận | 9/10 | Đủ giải thích và giới hạn |
 | Code | 30/30 | 42 test gốc pass |
 | Similarity | 5/5 | 5 cặp và số đo thật, công khai mock |
-| Retrieval | 3/10 | Proxy tự động; chờ chấm đáp án |
-| Tổng | 52/60 | Không phải điểm chính thức |
+| Retrieval | 0/10 | Proxy tự động; chờ chấm đáp án |
+| Tổng | 49/60 | Không phải điểm chính thức |
 
 Giới hạn corpus tóm lược và quyền dùng nguồn được ghi trong
 [DATA_PROVENANCE.md](DATA_PROVENANCE.md); không tự đánh dấu hoàn tất CP2 nguyên văn.

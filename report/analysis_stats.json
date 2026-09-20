@@ -5,89 +5,111 @@
     "100": 25
   },
   "baseline": {
-    "buyer-dieu-kien": {
+    "shopee-return-refund-general": {
       "fixed_size": {
-        "count": 2,
+        "count": 5,
         "chunks": [
-          "## 1.1. Nguyên tắc chung\n\nShopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.\n\n## 1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee\n\nVới đơn thông thường, hạn gửi yêu cầu là 15 ngày tính từ khi hệ thống ghi nhận giao thành công. Riêng thực phẩm tươi sống hoặc đông lạnh: 24 giờ, ngoại trừ khiếu nại chưa nhận hàng.\n\nNếu shop tự vận chuyển, hạn là 15 ngày sau khi người mua xác nhận nhận hàng; nếu chưa xác nhận",
-          "hi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công.\n\n## 1.3. Lý do Trả hàng/Hoàn tiền\n\nCác tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm."
+          "# Quy định chung về trả hàng và hoàn tiền\n\n## Nguyên tắc\n\nShopee hiện không hỗ trợ yêu cầu **đổi hàng**. Với hàng khác mô tả hoặc hư hỏng, người mua có thể từ chối nhận khi đồng kiểm nếu đơn hàng có hỗ trợ, hoặc gửi yêu cầu trả hàng/hoàn tiền sau khi nhận hàng.\n\n## Thời hạn gửi yêu cầu\n\n| Loại đơn hàng | Thời hạn theo trang nguồn |\n|---|---|\n| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |\n| Người bán tự vận chuyển, người m",
+          "ng thành công |\n| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |\n| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |\n| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công |\n\nNgười mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hà",
+          "ong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại.\n\n## Một số lý do được nêu trong trang nguồn\n\nCác trường hợp gồm chưa nhận hàng, thiếu hàng hoặc phụ kiện, người bán gửi sai hàng, hàng bể vỡ, hàng lỗi, khác mô tả, hàng có dấu hiệu đã qua sử dụng, hàng giả/nhái. Với lý do **đổi ý**, sản phẩm phải còn nguyên trạng, chưa mở hoặc sử dụng và còn đủ tem, nhãn, phụ kiện. Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã ",
+          "p dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart.\n\n## Hoàn mã giảm giá và Shopee Xu\n\nViệc hoàn mã phụ thuộc hình thức hoàn tiền và việc yêu cầu áp dụng cho toàn bộ hay một phần đơn hàng. Với phương án trả hàng và hoàn tiền cho toàn bộ sản phẩm, mã giảm giá được hoàn; khi chỉ khiếu nại một phần sản phẩm, mã không được hoàn. Shopee Xu được hoàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được",
+          "oàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được hoàn. Trang nguồn còn nêu các ngoại lệ theo từng loại voucher, nên cần xem trang gốc khi trả lời câu hỏi về một mã cụ thể."
         ],
-        "avg_length": 411.5
+        "avg_length": 434.6
       },
       "by_sentences": {
         "count": 4,
         "chunks": [
-          "## 1.1. Nguyên tắc chung\n\nShopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.",
-          "## 1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee\n\nVới đơn thông thường, hạn gửi yêu cầu là 15 ngày tính từ khi hệ thống ghi nhận giao thành công. Riêng thực phẩm tươi sống hoặc đông lạnh: 24 giờ, ngoại trừ khiếu nại chưa nhận hàng.",
-          "Nếu shop tự vận chuyển, hạn là 15 ngày sau khi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công. ## 1.3. Lý do Trả hàng/Hoàn tiền\n\nCác tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả.",
-          "Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm."
+          "# Quy định chung về trả hàng và hoàn tiền\n\n## Nguyên tắc\n\nShopee hiện không hỗ trợ yêu cầu **đổi hàng**. Với hàng khác mô tả hoặc hư hỏng, người mua có thể từ chối nhận khi đồng kiểm nếu đơn hàng có hỗ trợ, hoặc gửi yêu cầu trả hàng/hoàn tiền sau khi nhận hàng. ## Thời hạn gửi yêu cầu\n\n| Loại đơn hàng | Thời hạn theo trang nguồn |\n|---|---|\n| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |\n| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |\n| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |\n| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công |\n\nNgười mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng.",
+          "Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại. ## Một số lý do được nêu trong trang nguồn\n\nCác trường hợp gồm chưa nhận hàng, thiếu hàng hoặc phụ kiện, người bán gửi sai hàng, hàng bể vỡ, hàng lỗi, khác mô tả, hàng có dấu hiệu đã qua sử dụng, hàng giả/nhái. Với lý do **đổi ý**, sản phẩm phải còn nguyên trạng, chưa mở hoặc sử dụng và còn đủ tem, nhãn, phụ kiện.",
+          "Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart. ## Hoàn mã giảm giá và Shopee Xu\n\nViệc hoàn mã phụ thuộc hình thức hoàn tiền và việc yêu cầu áp dụng cho toàn bộ hay một phần đơn hàng. Với phương án trả hàng và hoàn tiền cho toàn bộ sản phẩm, mã giảm giá được hoàn; khi chỉ khiếu nại một phần sản phẩm, mã không được hoàn.",
+          "Shopee Xu được hoàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được hoàn. Trang nguồn còn nêu các ngoại lệ theo từng loại voucher, nên cần xem trang gốc khi trả lời câu hỏi về một mã cụ thể."
         ],
-        "avg_length": 191.75
+        "avg_length": 491.75
       },
       "recursive": {
-        "count": 2,
+        "count": 5,
         "chunks": [
-          "## 1.1. Nguyên tắc chung\n\nShopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.\n\n## 1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee\n\nVới đơn thông thường, hạn gửi yêu cầu là 15 ngày tính từ khi hệ thống ghi nhận giao thành công. Riêng thực phẩm tươi sống hoặc đông lạnh: 24 giờ, ngoại trừ khiếu nại chưa nhận hàng.\n\n",
-          "Nếu shop tự vận chuyển, hạn là 15 ngày sau khi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công.\n\n## 1.3. Lý do Trả hàng/Hoàn tiền\n\nCác tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm."
+          "# Quy định chung về trả hàng và hoàn tiền\n\n## Nguyên tắc\n\nShopee hiện không hỗ trợ yêu cầu **đổi hàng**. Với hàng khác mô tả hoặc hư hỏng, người mua có thể từ chối nhận khi đồng kiểm nếu đơn hàng có hỗ trợ, hoặc gửi yêu cầu trả hàng/hoàn tiền sau khi nhận hàng.\n\n## Thời hạn gửi yêu cầu\n\n",
+          "| Loại đơn hàng | Thời hạn theo trang nguồn |\n|---|---|\n| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |\n| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |\n| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |\n| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công |\n\n",
+          "Người mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại.\n\n## Một số lý do được nêu trong trang nguồn\n\n",
+          "Các trường hợp gồm chưa nhận hàng, thiếu hàng hoặc phụ kiện, người bán gửi sai hàng, hàng bể vỡ, hàng lỗi, khác mô tả, hàng có dấu hiệu đã qua sử dụng, hàng giả/nhái. Với lý do **đổi ý**, sản phẩm phải còn nguyên trạng, chưa mở hoặc sử dụng và còn đủ tem, nhãn, phụ kiện. Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart.\n\n## Hoàn mã giảm giá và Shopee Xu\n\n",
+          "Việc hoàn mã phụ thuộc hình thức hoàn tiền và việc yêu cầu áp dụng cho toàn bộ hay một phần đơn hàng. Với phương án trả hàng và hoàn tiền cho toàn bộ sản phẩm, mã giảm giá được hoàn; khi chỉ khiếu nại một phần sản phẩm, mã không được hoàn. Shopee Xu được hoàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được hoàn. Trang nguồn còn nêu các ngoại lệ theo từng loại voucher, nên cần xem trang gốc khi trả lời câu hỏi về một mã cụ thể."
         ],
-        "avg_length": 386.5
+        "avg_length": 394.6
       }
     },
-    "buyer-gui-hang": {
+    "shopee-return-shipping-fees": {
       "fixed_size": {
-        "count": 2,
-        "chunks": [
-          "## 1.1. Hình thức trả hàng\n\nCó ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.\n\n## 2.2. Phí vận chuyển trả hàng\n\nVới Tự sắp xếp, người mua ứng phí trước. Đơn ngoài Mall đủ điều kiện được hỗ trợ bằng Xu: cùng tỉnh/thành với shop là 25.000 Xu; khác tỉnh/thành là 40.000 Xu. Thời gian hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và",
-          "hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.\n\n## 3. Điều kiện hỗ trợ phí trả hàng\n\nCần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD."
-        ],
-        "avg_length": 429.0
-      },
-      "by_sentences": {
-        "count": 4,
-        "chunks": [
-          "## 1.1. Hình thức trả hàng\n\nCó ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua.",
-          "Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống. ## 2.2. Phí vận chuyển trả hàng\n\nVới Tự sắp xếp, người mua ứng phí trước.",
-          "Đơn ngoài Mall đủ điều kiện được hỗ trợ bằng Xu: cùng tỉnh/thành với shop là 25.000 Xu; khác tỉnh/thành là 40.000 Xu. Thời gian hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết. ## 3.",
-          "Điều kiện hỗ trợ phí trả hàng\n\nCần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD."
-        ],
-        "avg_length": 200.75
-      },
-      "recursive": {
         "count": 3,
         "chunks": [
-          "## 1.1. Hình thức trả hàng\n\nCó ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.\n\n## 2.2. Phí vận chuyển trả hàng\n\n",
-          "Với Tự sắp xếp, người mua ứng phí trước. Đơn ngoài Mall đủ điều kiện được hỗ trợ bằng Xu: cùng tỉnh/thành với shop là 25.000 Xu; khác tỉnh/thành là 40.000 Xu. Thời gian hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.\n\n## 3. Điều kiện hỗ trợ phí trả hàng\n\n",
-          "Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD."
+          "# Cách gửi hàng hoàn trả và phí vận chuyển\n\n## Ba hình thức gửi hàng\n\n- **Đơn vị vận chuyển đến lấy:** người mua chọn thời gian, địa chỉ, đóng gói và dán phiếu hoặc ghi mã vận đơn; hình thức này miễn phí trả hàng.\n- **Trả tại bưu cục được hệ thống đề xuất:** đóng gói, dán phiếu hoặc ghi mã vận đơn rồi mang đến bưu cục; hình thức này miễn phí trả hàng.\n- **Tự sắp xếp:** người mua thanh toán trước phí, tự gửi đến địa chỉ Shopee cung cấp và tải bằng chứng trả hàng lên chi tiết yêu cầu. Cần giữ hóa ",
+          " chứng trả hàng lên chi tiết yêu cầu. Cần giữ hóa đơn với mã vận đơn, số điện thoại và địa chỉ người nhận; không thu hộ.\n\n## Phí vận chuyển\n\nNếu trả toàn bộ sản phẩm và được đồng ý hoàn đủ giá trị đã thanh toán, phí vận chuyển ban đầu được hoàn; nếu chỉ trả một phần sản phẩm, phí ban đầu không được hoàn. Với hình thức tự sắp xếp, khoản hỗ trợ phí trả hàng được xử lý trong **3–5 ngày làm việc** khi đáp ứng điều kiện: đơn Shopee Mall được hoàn khoản phí; đơn ngoài Shopee Mall có thể được hỗ trợ **",
+          "n phí; đơn ngoài Shopee Mall có thể được hỗ trợ **25.000 Shopee Xu** nếu cùng tỉnh/thành phố với người bán hoặc **40.000 Shopee Xu** nếu khác tỉnh/thành phố.\n\nĐiều kiện hỗ trợ gồm yêu cầu trả hàng được chấp nhận, thông tin và mã vận đơn hợp lệ, hành trình giao hàng hoàn thành, người bán/Shopee đồng ý hoàn tiền, và đơn ban đầu không dùng kênh người bán tự vận chuyển. Trang nguồn cũng nêu ngoại lệ nếu Shopee không thể kiểm tra hành trình hàng hoàn khi có khiếu nại."
         ],
-        "avg_length": 269.3333333333333
+        "avg_length": 489.0
+      },
+      "by_sentences": {
+        "count": 3,
+        "chunks": [
+          "# Cách gửi hàng hoàn trả và phí vận chuyển\n\n## Ba hình thức gửi hàng\n\n- **Đơn vị vận chuyển đến lấy:** người mua chọn thời gian, địa chỉ, đóng gói và dán phiếu hoặc ghi mã vận đơn; hình thức này miễn phí trả hàng. - **Trả tại bưu cục được hệ thống đề xuất:** đóng gói, dán phiếu hoặc ghi mã vận đơn rồi mang đến bưu cục; hình thức này miễn phí trả hàng. - **Tự sắp xếp:** người mua thanh toán trước phí, tự gửi đến địa chỉ Shopee cung cấp và tải bằng chứng trả hàng lên chi tiết yêu cầu.",
+          "Cần giữ hóa đơn với mã vận đơn, số điện thoại và địa chỉ người nhận; không thu hộ. ## Phí vận chuyển\n\nNếu trả toàn bộ sản phẩm và được đồng ý hoàn đủ giá trị đã thanh toán, phí vận chuyển ban đầu được hoàn; nếu chỉ trả một phần sản phẩm, phí ban đầu không được hoàn. Với hình thức tự sắp xếp, khoản hỗ trợ phí trả hàng được xử lý trong **3–5 ngày làm việc** khi đáp ứng điều kiện: đơn Shopee Mall được hoàn khoản phí; đơn ngoài Shopee Mall có thể được hỗ trợ **25.000 Shopee Xu** nếu cùng tỉnh/thành phố với người bán hoặc **40.000 Shopee Xu** nếu khác tỉnh/thành phố.",
+          "Điều kiện hỗ trợ gồm yêu cầu trả hàng được chấp nhận, thông tin và mã vận đơn hợp lệ, hành trình giao hàng hoàn thành, người bán/Shopee đồng ý hoàn tiền, và đơn ban đầu không dùng kênh người bán tự vận chuyển. Trang nguồn cũng nêu ngoại lệ nếu Shopee không thể kiểm tra hành trình hàng hoàn khi có khiếu nại."
+        ],
+        "avg_length": 454.3333333333333
+      },
+      "recursive": {
+        "count": 5,
+        "chunks": [
+          "# Cách gửi hàng hoàn trả và phí vận chuyển\n\n## Ba hình thức gửi hàng\n\n",
+          "- **Đơn vị vận chuyển đến lấy:** người mua chọn thời gian, địa chỉ, đóng gói và dán phiếu hoặc ghi mã vận đơn; hình thức này miễn phí trả hàng.\n- **Trả tại bưu cục được hệ thống đề xuất:** đóng gói, dán phiếu hoặc ghi mã vận đơn rồi mang đến bưu cục; hình thức này miễn phí trả hàng.\n",
+          "- **Tự sắp xếp:** người mua thanh toán trước phí, tự gửi đến địa chỉ Shopee cung cấp và tải bằng chứng trả hàng lên chi tiết yêu cầu. Cần giữ hóa đơn với mã vận đơn, số điện thoại và địa chỉ người nhận; không thu hộ.\n\n",
+          "## Phí vận chuyển\n\nNếu trả toàn bộ sản phẩm và được đồng ý hoàn đủ giá trị đã thanh toán, phí vận chuyển ban đầu được hoàn; nếu chỉ trả một phần sản phẩm, phí ban đầu không được hoàn. Với hình thức tự sắp xếp, khoản hỗ trợ phí trả hàng được xử lý trong **3–5 ngày làm việc** khi đáp ứng điều kiện: đơn Shopee Mall được hoàn khoản phí; đơn ngoài Shopee Mall có thể được hỗ trợ **25.000 Shopee Xu** nếu cùng tỉnh/thành phố với người bán hoặc **40.000 Shopee Xu** nếu khác tỉnh/thành phố.\n\n",
+          "Điều kiện hỗ trợ gồm yêu cầu trả hàng được chấp nhận, thông tin và mã vận đơn hợp lệ, hành trình giao hàng hoàn thành, người bán/Shopee đồng ý hoàn tiền, và đơn ban đầu không dùng kênh người bán tự vận chuyển. Trang nguồn cũng nêu ngoại lệ nếu Shopee không thể kiểm tra hành trình hàng hoàn khi có khiếu nại."
+        ],
+        "avg_length": 273.4
       }
     },
-    "seller-phan-hoi": {
+    "shopee-seller-return-refund-rights": {
       "fixed_size": {
-        "count": 2,
+        "count": 5,
         "chunks": [
-          "## 5. QUYỀN CỦA NGƯỜI BÁN\n\nKhi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.\n\nKhông phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.\n\n## 7.2. Trường hợp không chịu phí chiều hoàn\n\nMột t",
-          "# 7.2. Trường hợp không chịu phí chiều hoàn\n\nMột trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.\n\n## 12.2. Hiệu lực\n\nNguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491."
+          "# Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền\n\n## Phản hồi yêu cầu — Mục 5 của chính sách\n\nKhi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác. Quá thời hạn mà không phản hồi, Shopee h",
+          "hạn khác. Quá thời hạn mà không phản hồi, Shopee hiểu rằng người bán đồng ý với quyết định và không khiếu nại; Shopee có thể cân nhắc hoàn tiền mà không cần người mua trả hàng.\n\n## Chi phí vận chuyển hàng hoàn — Mục 7\n\nNgười bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. Người bán không chịu chi phí này trong một số trường h",
+          "i bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc.\n\n## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6\n\nShopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời ",
+          "người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua. Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.\n\nChính sá",
+          "ã thanh toán để hoàn tiền cho người mua.\n\nChính sách nguồn ghi ngày đăng tải **04/03/2026**, hiệu lực từ **11/03/2026**."
         ],
-        "avg_length": 435.0
+        "avg_length": 424.0
       },
       "by_sentences": {
         "count": 4,
         "chunks": [
-          "## 5. QUYỀN CỦA NGƯỜI BÁN\n\nKhi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.",
-          "Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại. ## 7.2.",
-          "Trường hợp không chịu phí chiều hoàn\n\nMột trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. ## 12.2.",
-          "Hiệu lực\n\nNguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491."
+          "# Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền\n\n## Phản hồi yêu cầu — Mục 5 của chính sách\n\nKhi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác. Quá thời hạn mà không phản hồi, Shopee hiểu rằng người bán đồng ý với quyết định và không khiếu nại; Shopee có thể cân nhắc hoàn tiền mà không cần người mua trả hàng.",
+          "## Chi phí vận chuyển hàng hoàn — Mục 7\n\nNgười bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. Người bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc.",
+          "## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6\n\nShopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua.",
+          "Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua. Chính sách nguồn ghi ngày đăng tải **04/03/2026**, hiệu lực từ **11/03/2026**."
         ],
-        "avg_length": 203.5
+        "avg_length": 478.5
       },
       "recursive": {
-        "count": 2,
+        "count": 13,
         "chunks": [
-          "## 5. QUYỀN CỦA NGƯỜI BÁN\n\nKhi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.\n\nKhông phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.\n\n## 7.2. Trường hợp không chịu phí chiều hoàn\n\n",
-          "Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.\n\n## 12.2. Hiệu lực\n\nNguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491."
+          "# Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền\n\n## Phản hồi yêu cầu — Mục 5 của chính sách\n\n",
+          "Khi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác. ",
+          "Quá thời hạn mà không phản hồi, Shopee hiểu rằng người bán đồng ý với quyết định và không khiếu nại; Shopee có thể cân nhắc hoàn tiền mà không cần người mua trả hàng.\n",
+          "\n",
+          "## Chi phí vận chuyển hàng hoàn — Mục 7\n\n",
+          "Người bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. ",
+          "Người bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc.\n",
+          "\n",
+          "## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6\n\n",
+          "Shopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua. ",
+          "Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.\n",
+          "\n",
+          "Chính sách nguồn ghi ngày đăng tải **04/03/2026**, hiệu lực từ **11/03/2026**."
         ],
-        "avg_length": 410.0
+        "avg_length": 147.69230769230768
       }
     }
   },

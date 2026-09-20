@@ -1,499 +1,432 @@
-Run UTC: 2026-09-20T03:16:03.996452+00:00
+Run UTC: 2026-09-20T03:38:19.521324+00:00
 Embedding backend: mock:md5-64-v1
 Agent: offline extractive baseline (not a generative LLM).
 Automatic marker scores need human answer review; mock scores do not measure semantics.
 
-=== fixed_size | 10 chunks | avg_length=425.20 ===
+=== fixed_size | 26 chunks | avg_length=429.58 ===
 
-Q1: Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không?
+Q1: Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không?
 filter={'audience': 'seller'}
-Gold: Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước.
+Gold: Người bán không chịu chi phí vận chuyển chiều hoàn trong một số trường hợp, gồm khi người mua chọn tự sắp xếp trả hàng.
 with query filter
- 1. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.070658
+ 1. shopee-seller-return-refund-rights#2 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.124977
     source=https://help.shopee.vn/portal/4/article/77251
-    # 7.2. Trường hợp không chịu phí chiều hoàn
+    i bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc.
 
-Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
+## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
 
-## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
- 2. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.010560
+Shopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời
+ 2. shopee-seller-return-refund-rights#0 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.015944
     source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
+    # Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền
 
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
+## Phản hồi yêu cầu — Mục 5 của chính sách
 
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-
-## 7.2. Trường hợp không chịu phí chiều hoàn
-
-Một t
-Agent answer: Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. [1]
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [2]
-doc_rank=1; evidence_rank=1; answer_marker_match=True; doc_only=2; evidence=2; automatic=2
-A/B WITHOUT FILTER
- 1. buyer-nhan-tien#0 | doc_id=buyer-nhan-tien | audience=buyer | score=0.243436
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-
-Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu.
-
-Thanh toán bằng thẻ tín dụng hoặc ghi nợ: tiền về chính tài khoản thẻ đã trả tiền, dự kiến 7-14 ngày làm việc tùy ngân hàng. Apple Pay và Google Pay cũng hoàn về thẻ liên kết với thời gian tương tự.
-
-Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân
- 2. buyer-gui-hang#1 | doc_id=buyer-gui-hang | audience=buyer | score=0.108257
-    source=https://help.shopee.vn/portal/4/article/189477
-    hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.
-
-## 3. Điều kiện hỗ trợ phí trả hàng
-
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
- 3. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.070658
+Khi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác. Quá thời hạn mà không phản hồi, Shopee h
+ 3. shopee-seller-return-refund-rights#1 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=-0.000606
     source=https://help.shopee.vn/portal/4/article/77251
-    # 7.2. Trường hợp không chịu phí chiều hoàn
+    hạn khác. Quá thời hạn mà không phản hồi, Shopee hiểu rằng người bán đồng ý với quyết định và không khiếu nại; Shopee có thể cân nhắc hoàn tiền mà không cần người mua trả hàng.
 
-Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
+## Chi phí vận chuyển hàng hoàn — Mục 7
 
-## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
-Agent answer: Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. [3]
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD. [2]
-doc_rank=3; evidence_rank=3; answer_marker_match=True; doc_only=1; evidence=1; automatic=1
-
-Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào?
-filter=None
-Gold: 24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng.
-with query filter
- 1. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.201837
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
-
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
-
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-
-## 7.2. Trường hợp không chịu phí chiều hoàn
-
-Một t
- 2. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.165585
-    source=https://help.shopee.vn/portal/4/article/79233
-    , xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
-
-## 2. Lưu ý
-
-Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về còn tùy phương thức thanh toán; không đồng nhất với thời gian xét yêu cầu.
- 3. buyer-gui-yeu-cau#0 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.136824
-    source=https://help.shopee.vn/portal/4/article/79233
-    ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền
-
-Từ tab Tôi, mở nhóm đơn đang giao hoặc đã giao, chọn đơn gặp vấn đề rồi mở chức năng Trả hàng/Hoàn tiền. Khai báo tình huống, chọn sản phẩm và lý do phù hợp; trường hợp thiếu hàng cần chọn phương án xử lý.
-
-Biểu mẫu cần mô tả tình trạng, ảnh hoặc video làm bằng chứng, cùng email liên hệ. Kiểm tra nội dung rồi bấm gửi.
-
-Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tả
-Agent answer: Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [1]
-Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về còn tùy phương thức thanh toán; không đồng nhất với thời gian xét yêu cầu. [2]
-doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-
-Q3: Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi?
-filter=None
-Gold: Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi.
-with query filter
- 1. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.214485
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
-
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
-
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-
-## 7.2. Trường hợp không chịu phí chiều hoàn
-
-Một t
- 2. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.150969
-    source=https://help.shopee.vn/portal/4/article/79233
-    , xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
-
-## 2. Lưu ý
-
-Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về còn tùy phương thức thanh toán; không đồng nhất với thời gian xét yêu cầu.
- 3. buyer-gui-hang#1 | doc_id=buyer-gui-hang | audience=buyer | score=0.143676
-    source=https://help.shopee.vn/portal/4/article/189477
-    hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.
-
-## 3. Điều kiện hỗ trợ phí trả hàng
-
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
-Agent answer: Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD. [3]
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [1]
-doc_rank=2; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
-
-Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua?
-filter=None
-Gold: Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí.
-with query filter
- 1. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.108828
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
-
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
-
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-
-## 7.2. Trường hợp không chịu phí chiều hoàn
-
-Một t
- 2. buyer-dieu-kien#1 | doc_id=buyer-dieu-kien | audience=buyer | score=0.082157
-    source=https://help.shopee.vn/portal/4/article/188931
-    hi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công.
-
-## 1.3. Lý do Trả hàng/Hoàn tiền
-
-Các tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm.
- 3. buyer-gui-hang#1 | doc_id=buyer-gui-hang | audience=buyer | score=0.079211
-    source=https://help.shopee.vn/portal/4/article/189477
-    hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.
-
-## 3. Điều kiện hỗ trợ phí trả hàng
-
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
-Agent answer: Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [1]
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại. [1]
-doc_rank=3; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
-
-Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt?
-filter=None
-Gold: Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
-with query filter
- 1. buyer-gui-hang#1 | doc_id=buyer-gui-hang | audience=buyer | score=0.154125
-    source=https://help.shopee.vn/portal/4/article/189477
-    hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và lễ/Tết.
-
-## 3. Điều kiện hỗ trợ phí trả hàng
-
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
- 2. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.147388
-    source=https://help.shopee.vn/portal/4/article/189473
-    n 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
-
-## Lưu ý
-
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có.
- 3. buyer-gui-hang#0 | doc_id=buyer-gui-hang | audience=buyer | score=0.076571
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 1.1. Hình thức trả hàng
-
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.
-
-## 2.2. Phí vận chuyển trả hàng
-
-Với Tự sắp xếp, người mua ứng phí trước. Đơn ngoài Mall đủ điều kiện được hỗ trợ bằng Xu: cùng tỉnh/thành với shop là 25.000 Xu; khác tỉnh/thành là 40.000 Xu. Thời gian hỗ trợ là 3-5 ngày làm việc, loại trừ cuối tuần và
-Agent answer: Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có. [2]
-n 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu. [2]
-doc_rank=2; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
-TOTAL doc_only=5/10; evidence=2/10; automatic=2/10
-
-=== recursive | 11 chunks | avg_length=363.82 ===
-
-Q1: Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không?
-filter={'audience': 'seller'}
-Gold: Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước.
-with query filter
- 1. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.175947
-    source=https://help.shopee.vn/portal/4/article/77251
-    Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
-
-## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
- 2. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=-0.009118
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
-
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
-
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-
-## 7.2. Trường hợp không chịu phí chiều hoàn
-Agent answer: Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. [1]
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [2]
-doc_rank=1; evidence_rank=1; answer_marker_match=True; doc_only=2; evidence=2; automatic=2
-A/B WITHOUT FILTER
- 1. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.175947
-    source=https://help.shopee.vn/portal/4/article/77251
-    Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
-
-## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
- 2. buyer-nhan-tien#0 | doc_id=buyer-nhan-tien | audience=buyer | score=0.053718
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-
-Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu.
-
-Thanh toán bằng thẻ tín dụng hoặc ghi nợ: tiền về chính tài khoản thẻ đã trả tiền, dự kiến 7-14 ngày làm việc tùy ngân hàng. Apple Pay và Google Pay cũng hoàn về thẻ liên kết với thời gian tương tự.
- 3. buyer-gui-hang#0 | doc_id=buyer-gui-hang | audience=buyer | score=0.026521
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 1.1. Hình thức trả hàng
-
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.
-
-## 2.2. Phí vận chuyển trả hàng
-Agent answer: Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. [1]
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống. [3]
-doc_rank=1; evidence_rank=1; answer_marker_match=True; doc_only=2; evidence=2; automatic=2
-
-Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào?
-filter=None
-Gold: 24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng.
-with query filter
- 1. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.133957
-    source=https://help.shopee.vn/portal/4/article/189473
-    Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
-
-## Lưu ý
-
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có.
- 2. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.103719
-    source=https://help.shopee.vn/portal/4/article/79233
-    Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
-
-## 2. Lưu ý
-
-Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về còn tùy phương thức thanh toán; không đồng nhất với thời gian xét yêu cầu.
- 3. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.054568
-    source=https://help.shopee.vn/portal/4/article/77251
-    Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
-
-## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
-Agent answer: Thông thường khâu xử lý mất 3-5 ngày làm việc. Kết quả được cập nhật trong thông báo đơn hàng hoặc email. Nếu được duyệt hoàn tiền, thời gian tiền về còn tùy phương thức thanh toán; không đồng nhất với thời gian xét yêu cầu. [2]
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có. [1]
-doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-
-Q3: Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi?
-filter=None
-Gold: Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi.
-with query filter
- 1. buyer-nhan-tien#0 | doc_id=buyer-nhan-tien | audience=buyer | score=0.206004
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-
-Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu.
-
-Thanh toán bằng thẻ tín dụng hoặc ghi nợ: tiền về chính tài khoản thẻ đã trả tiền, dự kiến 7-14 ngày làm việc tùy ngân hàng. Apple Pay và Google Pay cũng hoàn về thẻ liên kết với thời gian tương tự.
- 2. buyer-gui-hang#0 | doc_id=buyer-gui-hang | audience=buyer | score=0.156574
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 1.1. Hình thức trả hàng
-
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.
-
-## 2.2. Phí vận chuyển trả hàng
- 3. buyer-dieu-kien#1 | doc_id=buyer-dieu-kien | audience=buyer | score=0.132077
-    source=https://help.shopee.vn/portal/4/article/188931
-    Nếu shop tự vận chuyển, hạn là 15 ngày sau khi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công.
-
-## 1.3. Lý do Trả hàng/Hoàn tiền
-
-Các tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm.
-Agent answer: Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu. [1]
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống. [2]
-doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-
-Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua?
-filter=None
-Gold: Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí.
-with query filter
- 1. buyer-dieu-kien#0 | doc_id=buyer-dieu-kien | audience=buyer | score=0.176374
-    source=https://help.shopee.vn/portal/4/article/188931
-    ## 1.1. Nguyên tắc chung
-
-Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.
-
-## 1.2. Thời gian tối đa để gửi yêu cầu trả hàng hoàn tiền cho Shopee
-
-Với đơn thông thường, hạn gửi yêu cầu là 15 ngày tính từ khi hệ thống ghi nhận giao thành công. Riêng thực phẩm tươi sống hoặc đông lạnh: 24 giờ, ngoại trừ khiếu nại chưa nhận hàng.
- 2. buyer-dieu-kien#1 | doc_id=buyer-dieu-kien | audience=buyer | score=0.142563
-    source=https://help.shopee.vn/portal/4/article/188931
-    Nếu shop tự vận chuyển, hạn là 15 ngày sau khi người mua xác nhận nhận hàng; nếu chưa xác nhận, hạn là 20 ngày từ trạng thái lấy hàng thành công.
-
-## 1.3. Lý do Trả hàng/Hoàn tiền
-
-Các tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm.
- 3. buyer-gui-hang#0 | doc_id=buyer-gui-hang | audience=buyer | score=0.081545
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 1.1. Hình thức trả hàng
-
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.
-
-## 2.2. Phí vận chuyển trả hàng
-Agent answer: Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống. [3]
-Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn. [1]
-doc_rank=3; evidence_rank=3; answer_marker_match=True; doc_only=1; evidence=1; automatic=1
-
-Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt?
-filter=None
-Gold: Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
-with query filter
- 1. buyer-gui-hang#2 | doc_id=buyer-gui-hang | audience=buyer | score=0.112305
-    source=https://help.shopee.vn/portal/4/article/189477
-    Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
- 2. buyer-gui-yeu-cau#0 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.078260
-    source=https://help.shopee.vn/portal/4/article/79233
-    ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền
-
-Từ tab Tôi, mở nhóm đơn đang giao hoặc đã giao, chọn đơn gặp vấn đề rồi mở chức năng Trả hàng/Hoàn tiền. Khai báo tình huống, chọn sản phẩm và lý do phù hợp; trường hợp thiếu hàng cần chọn phương án xử lý.
-
-Biểu mẫu cần mô tả tình trạng, ảnh hoặc video làm bằng chứng, cùng email liên hệ. Kiểm tra nội dung rồi bấm gửi.
- 3. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.059510
-    source=https://help.shopee.vn/portal/4/article/189473
-    Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
-
-## Lưu ý
-
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có.
-Agent answer: Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu. [3]
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có. [3]
-doc_rank=3; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
-TOTAL doc_only=4/10; evidence=3/10; automatic=3/10
-
-=== heading | 15 chunks | avg_length=272.60 ===
-
-Q1: Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không?
-filter={'audience': 'seller'}
-Gold: Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước.
-with query filter
- 1. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.040489
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
-
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
-
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
- 2. seller-phan-hoi#1 | doc_id=seller-phan-hoi | audience=seller | score=0.019513
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 7.2. Trường hợp không chịu phí chiều hoàn
-
-Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển.
- 3. seller-phan-hoi#2 | doc_id=seller-phan-hoi | audience=seller | score=-0.112875
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 12.2. Hiệu lực
-
-Nguồn ghi ngày công bố 04/03/2026 và ngày áp dụng 11/03/2026. Bản này khác trang chính sách cũ mang mã 77491.
-Agent answer: Một trường hợp được miễn phí chiều hoàn cho shop là khi khách dùng phương thức Tự sắp xếp để gửi lại sản phẩm. Đây là trách nhiệm của người bán; không có nghĩa khách không cần ứng phí vận chuyển. [2]
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [1]
-doc_rank=1; evidence_rank=2; answer_marker_match=True; doc_only=2; evidence=1; automatic=1
-A/B WITHOUT FILTER
- 1. buyer-dieu-kien#2 | doc_id=buyer-dieu-kien | audience=buyer | score=0.225720
-    source=https://help.shopee.vn/portal/4/article/188931
-    ## 1.3. Lý do Trả hàng/Hoàn tiền
-
-Các tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm.
- 2. buyer-dieu-kien#0 | doc_id=buyer-dieu-kien | audience=buyer | score=0.138847
-    source=https://help.shopee.vn/portal/4/article/188931
-    ## 1.1. Nguyên tắc chung
-
-Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.
- 3. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.135515
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
-Agent answer: Các tình huống gồm thiếu sản phẩm, giao nhầm, hỏng vỡ, không hoạt động, sai mô tả hoặc nghi hàng giả. Đổi ý có điều kiện riêng; không được mặc định áp dụng cho mọi tài khoản và sản phẩm. [1]
-Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn. [2]
-doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-
-Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào?
-filter=None
-Gold: 24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng.
-with query filter
- 1. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.194624
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
- 2. buyer-gui-hang#2 | doc_id=buyer-gui-hang | audience=buyer | score=0.076698
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 3. Điều kiện hỗ trợ phí trả hàng
-
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
- 3. buyer-nhan-tien#2 | doc_id=buyer-nhan-tien | audience=buyer | score=0.068471
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Lưu ý
-
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có.
-Agent answer: Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD. [2]
-Ví nhận tiền phải còn liên kết với tài khoản Shopee và sử dụng được. Nếu shop khiếu nại, Shopee tiếp tục xem xét và báo kết quả trong 3-5 ngày làm việc từ khi tiếp nhận khiếu nại đó. Theo dõi thông báo cập nhật đơn để phân biệt xét duyệt với thời gian ngân hàng ghi có. [3]
-doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-
-Q3: Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi?
-filter=None
-Gold: Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi.
-with query filter
- 1. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.253775
-    source=https://help.shopee.vn/portal/4/article/79233
-    ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền
-Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
- 2. buyer-nhan-tien#0 | doc_id=buyer-nhan-tien | audience=buyer | score=0.206004
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-
-Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu.
-
-Thanh toán bằng thẻ tín dụng hoặc ghi nợ: tiền về chính tài khoản thẻ đã trả tiền, dự kiến 7-14 ngày làm việc tùy ngân hàng. Apple Pay và Google Pay cũng hoàn về thẻ liên kết với thời gian tương tự.
- 3. buyer-nhan-tien#1 | doc_id=buyer-nhan-tien | audience=buyer | score=0.199161
-    source=https://help.shopee.vn/portal/4/article/189473
-    ## Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền
-Thanh toán từ ví ShopeePay: hoàn vào ví trong 24 giờ khi ví hoạt động bình thường. Napas cần 2-5 ngày làm việc; thanh toán qua ứng dụng ngân hàng cần 7 ngày làm việc để hoàn về tài khoản ban đầu.
-Agent answer: Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi. [1]
-Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền, không tính từ lúc người mua gửi yêu cầu. [2]
+Người bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. Người bán không chịu chi phí này trong một số trường h
+Agent answer: i bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc. [1]
+Người bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. Người bán không chịu chi phí này trong một số trường h [3]
 doc_rank=1; evidence_rank=None; answer_marker_match=False; doc_only=2; evidence=0; automatic=0
+A/B WITHOUT FILTER
+ 1. shopee-handle-return-request#1 | doc_id=shopee-handle-return-request | audience=buyer | score=0.175919
+    source=https://help.shopee.vn/portal/4/article/190242
+     án khi được chấp nhận
 
-Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua?
-filter=None
-Gold: Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí.
-with query filter
- 1. buyer-dieu-kien#0 | doc_id=buyer-dieu-kien | audience=buyer | score=0.235005
+- **Hoàn tiền ngay:** người mua nhận tiền mà không cần trả hàng.
+- **Trả hàng và hoàn tiền:** người mua chọn hình thức gửi hàng và hoàn tất việc gửi hàng về Shopee/người bán trong **6 ngày** từ khi nhận thông báo gửi trả hàng.
+
+## Tình trạng hàng hoàn
+
+Shopee đánh giá tình trạng hàng theo lý do khiếu nại và bằng chứng. Với lý do hàng nguyên vẹn nhưng không còn nhu cầu, trang nguồn yêu cầu hàng còn nguyên seal, tem và hộp cùng các điều kiện áp dụng khác. Nếu hàng hoàn khôn
+ 2. shopee-refund-timing#1 | doc_id=shopee-refund-timing | audience=buyer | score=0.150397
+    source=https://help.shopee.vn/portal/4/article/189473
+     ngân hàng mặc định liên kết với Shopee | **2 ngày làm việc**, tùy ngân hàng |
+| Ứng dụng ngân hàng, hoàn về tài khoản ban đầu | **7 ngày làm việc** |
+| Thẻ nội địa Napas | **2–5 ngày làm việc** |
+| Thẻ tín dụng/ghi nợ | **7–14 ngày làm việc**, tùy ngân hàng |
+| Apple Pay hoặc Google Pay, hoàn về thẻ liên kết | **7–14 ngày làm việc**, tùy ngân hàng |
+| SPayLater | **24 giờ** theo trường hợp trong bảng nguồn |
+
+Với thanh toán khi nhận hàng hoặc thanh toán QR, kênh nhận tiền có thể là ShopeePay ho
+ 3. shopee-return-refund-general#0 | doc_id=shopee-return-refund-general | audience=buyer | score=0.145992
     source=https://help.shopee.vn/portal/4/article/188931
-    ## 1.1. Nguyên tắc chung
+    # Quy định chung về trả hàng và hoàn tiền
 
-Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn.
- 2. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.187156
-    source=https://help.shopee.vn/portal/4/article/79233
-    ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền
-Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
- 3. seller-phan-hoi#0 | doc_id=seller-phan-hoi | audience=seller | score=0.180400
-    source=https://help.shopee.vn/portal/4/article/77251
-    ## 5. QUYỀN CỦA NGƯỜI BÁN
+## Nguyên tắc
 
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về.
+Shopee hiện không hỗ trợ yêu cầu **đổi hàng**. Với hàng khác mô tả hoặc hư hỏng, người mua có thể từ chối nhận khi đồng kiểm nếu đơn hàng có hỗ trợ, hoặc gửi yêu cầu trả hàng/hoàn tiền sau khi nhận hàng.
 
-Không phản hồi đúng hạn được hiểu là shop chấp nhận cách xử lý. Shopee có thể xét hoàn tiền mà không yêu cầu gửi hàng lại.
-Agent answer: Shopee chưa cung cấp chức năng đổi sản phẩm. Khi món hàng có vấn đề, người mua có thể lập yêu cầu trả lại và nhận tiền hoàn. [1]
-Khi nhận thông báo xử lý trả hàng hoặc hoàn tiền, shop muốn phản đối phải gửi phản hồi trong 02 ngày lịch từ ngày nhận thông báo, trừ khi Shopee quy định thời hạn khác. Áp dụng khi không đồng ý quyết định, chưa nhận hàng hoàn, hàng trả không đủ điều kiện, hoặc hàng bị mất hay hỏng trên đường về. [3]
+## Thời hạn gửi yêu cầu
+
+| Loại đơn hàng | Thời hạn theo trang nguồn |
+|---|---|
+| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |
+| Người bán tự vận chuyển, người m
+Agent answer: - **Hoàn tiền ngay:** người mua nhận tiền mà không cần trả hàng.
+- **Trả hàng và hoàn tiền:** người mua chọn hình thức gửi hàng và hoàn tất việc gửi hàng về Shopee/người bán trong **6 ngày** từ khi nhận thông báo gửi trả hàng. [1]
+Shopee hiện không hỗ trợ yêu cầu **đổi hàng**. Với hàng khác mô tả hoặc hư hỏng, người mua có thể từ chối nhận khi đồng kiểm nếu đơn hàng có hỗ trợ, hoặc gửi yêu cầu trả hàng/hoàn tiền sau khi nhận hàng. [3]
 doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
 
-Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt?
+Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào?
 filter=None
-Gold: Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
+Gold: Thực phẩm tươi sống hoặc đông lạnh có thời hạn 24 giờ từ khi đơn cập nhật giao hàng thành công, trừ lý do chưa nhận hàng.
 with query filter
- 1. buyer-gui-hang#2 | doc_id=buyer-gui-hang | audience=buyer | score=0.168145
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 3. Điều kiện hỗ trợ phí trả hàng
+ 1. shopee-seller-return-refund-rights#2 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.248744
+    source=https://help.shopee.vn/portal/4/article/77251
+    i bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc.
 
-Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD.
- 2. buyer-gui-hang#0 | doc_id=buyer-gui-hang | audience=buyer | score=0.166695
-    source=https://help.shopee.vn/portal/4/article/189477
-    ## 1.1. Hình thức trả hàng
+## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
 
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống.
- 3. buyer-gui-yeu-cau#1 | doc_id=buyer-gui-yeu-cau | audience=buyer | score=0.106094
-    source=https://help.shopee.vn/portal/4/article/79233
-    ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền
-Cách khác là vào khu vực trò chuyện với Shopee, chọn chức năng khiếu nại, tìm đơn, xác nhận đã nhận hay chưa nhận, chọn lý do và tải bằng chứng trước khi gửi.
-Agent answer: Cần yêu cầu được duyệt, thông tin vận chuyển chính xác, hành trình tra được và xác nhận giao thành công, đồng thời được chấp thuận hoàn tiền. Đơn ban đầu dùng kênh shop tự vận chuyển không thuộc diện hỗ trợ này. Khi tự gửi, giữ hóa đơn và không dùng thu hộ COD. [1]
-Có ba lựa chọn: hẹn lấy tại nhà, gửi tại bưu cục do hệ thống đề xuất, hoặc Tự sắp xếp. Hai lựa chọn đầu miễn phí cho người mua. Hàng cần đóng gói; ghi hoặc dán mã vận đơn do Shopee cấp khi sử dụng dịch vụ của hệ thống. [2]
+Shopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời
+ 2. shopee-seller-return-refund-rights#3 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.211989
+    source=https://help.shopee.vn/portal/4/article/77251
+    người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua. Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.
+
+Chính sá
+ 3. shopee-refund-timing#1 | doc_id=shopee-refund-timing | audience=buyer | score=0.204920
+    source=https://help.shopee.vn/portal/4/article/189473
+     ngân hàng mặc định liên kết với Shopee | **2 ngày làm việc**, tùy ngân hàng |
+| Ứng dụng ngân hàng, hoàn về tài khoản ban đầu | **7 ngày làm việc** |
+| Thẻ nội địa Napas | **2–5 ngày làm việc** |
+| Thẻ tín dụng/ghi nợ | **7–14 ngày làm việc**, tùy ngân hàng |
+| Apple Pay hoặc Google Pay, hoàn về thẻ liên kết | **7–14 ngày làm việc**, tùy ngân hàng |
+| SPayLater | **24 giờ** theo trường hợp trong bảng nguồn |
+
+Với thanh toán khi nhận hàng hoặc thanh toán QR, kênh nhận tiền có thể là ShopeePay ho
+Agent answer: người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua. Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua. [2]
+i bán không chịu chi phí này trong một số trường hợp, gồm yêu cầu trả một phần đơn hàng, lý do chưa nhận được hàng, lỗi do đơn vị vận chuyển, hoàn tiền ngay không trả hàng, đơn giao không thành công thuộc kênh người bán tự vận chuyển, hoặc người mua chọn tự sắp xếp trả hàng. Các trường hợp áp dụng theo quyết định của Shopee tại chính sách gốc. [1]
 doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
-TOTAL doc_only=4/10; evidence=1/10; automatic=1/10
+
+Q3: Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì?
+filter=None
+Gold: Người mua cần chọn sản phẩm, lý do khiếu nại, phương án xử lý nếu hệ thống yêu cầu, điền mô tả, hình ảnh hoặc video bằng chứng và email liên hệ.
+with query filter
+ 1. shopee-restricted-returns#1 | doc_id=shopee-restricted-returns | audience=buyer | score=0.200783
+    source=https://help.shopee.vn/portal/4/article/79465
+    m tươi sống, đông lạnh, chế biến, bánh tươi, hoa, cây cảnh và sản phẩm dễ hỏng.
+- **Hàng đặc thù trong vận chuyển:** phương tiện giao thông, dầu nhớt động cơ, trang sức vàng và thẻ vàng.
+- **Sản phẩm số và dịch vụ:** SIM, thẻ điện thoại, voucher dịch vụ và thẻ quà tặng.
+
+Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể được ghi trên trang chi tiết hoặc hình ảnh sản phẩm.
+ 2. shopee-refund-timing#1 | doc_id=shopee-refund-timing | audience=buyer | score=0.145783
+    source=https://help.shopee.vn/portal/4/article/189473
+     ngân hàng mặc định liên kết với Shopee | **2 ngày làm việc**, tùy ngân hàng |
+| Ứng dụng ngân hàng, hoàn về tài khoản ban đầu | **7 ngày làm việc** |
+| Thẻ nội địa Napas | **2–5 ngày làm việc** |
+| Thẻ tín dụng/ghi nợ | **7–14 ngày làm việc**, tùy ngân hàng |
+| Apple Pay hoặc Google Pay, hoàn về thẻ liên kết | **7–14 ngày làm việc**, tùy ngân hàng |
+| SPayLater | **24 giờ** theo trường hợp trong bảng nguồn |
+
+Với thanh toán khi nhận hàng hoặc thanh toán QR, kênh nhận tiền có thể là ShopeePay ho
+ 3. shopee-instant-refund-offer#0 | doc_id=shopee-instant-refund-offer | audience=buyer | score=0.137852
+    source=https://help.shopee.vn/portal/4/article/190387
+    # Người mua phản hồi đề xuất hoàn tiền ngay của người bán
+
+Sau khi người mua tạo yêu cầu trả hàng/hoàn tiền, người bán có thể đề xuất **hoàn tiền ngay một phần hoặc toàn bộ giá trị đơn hàng**. Người mua vào **Tôi → Trả hàng/Hoàn tiền → Chi tiết Trả hàng Hoàn tiền** của đơn liên quan và kiểm tra số tiền đề xuất.
+
+Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với người bán hoặc chọn **Tôi muốn trả
+Agent answer: Sau khi người mua tạo yêu cầu trả hàng/hoàn tiền, người bán có thể đề xuất **hoàn tiền ngay một phần hoặc toàn bộ giá trị đơn hàng**. Người mua vào **Tôi → Trả hàng/Hoàn tiền → Chi tiết Trả hàng Hoàn tiền** của đơn liên quan và kiểm tra số tiền đề xuất. [3]
+Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với người bán hoặc chọn **Tôi muốn trả [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng.
+filter=None
+Gold: Ba hình thức là đơn vị vận chuyển đến lấy, trả tại bưu cục được hệ thống đề xuất và tự sắp xếp. Hai hình thức đầu miễn phí trả hàng; tự sắp xếp thì người mua thanh toán trước phí.
+with query filter
+ 1. shopee-handle-return-request#2 | doc_id=shopee-handle-return-request | audience=buyer | score=0.273494
+    source=https://help.shopee.vn/portal/4/article/190242
+    ùng các điều kiện áp dụng khác. Nếu hàng hoàn không đáp ứng tiêu chí tương ứng, Shopee có thể không xử lý hoàn tiền và trả hàng lại cho người mua. Người mua có thể liên hệ bộ phận chăm sóc khách hàng khi cho rằng kết quả xử lý có sai sót.
+ 2. shopee-restricted-returns#1 | doc_id=shopee-restricted-returns | audience=buyer | score=0.258126
+    source=https://help.shopee.vn/portal/4/article/79465
+    m tươi sống, đông lạnh, chế biến, bánh tươi, hoa, cây cảnh và sản phẩm dễ hỏng.
+- **Hàng đặc thù trong vận chuyển:** phương tiện giao thông, dầu nhớt động cơ, trang sức vàng và thẻ vàng.
+- **Sản phẩm số và dịch vụ:** SIM, thẻ điện thoại, voucher dịch vụ và thẻ quà tặng.
+
+Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể được ghi trên trang chi tiết hoặc hình ảnh sản phẩm.
+ 3. shopee-submit-return-request#2 | doc_id=shopee-submit-return-request | audience=buyer | score=0.184501
+    source=https://help.shopee.vn/portal/4/article/79233
+    ời mua cần gửi lại sản phẩm qua bưu tá đến lấy hoặc mang đến bưu cục; người bán/Shopee sẽ xem xét hàng khi nhận lại.
+Agent answer: ùng các điều kiện áp dụng khác. Nếu hàng hoàn không đáp ứng tiêu chí tương ứng, Shopee có thể không xử lý hoàn tiền và trả hàng lại cho người mua. Người mua có thể liên hệ bộ phận chăm sóc khách hàng khi cho rằng kết quả xử lý có sai sót. [1]
+ời mua cần gửi lại sản phẩm qua bưu tá đến lấy hoặc mang đến bưu cục; người bán/Shopee sẽ xem xét hàng khi nhận lại. [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền?
+filter=None
+Gold: Với thẻ tín dụng hoặc ghi nợ, thời gian hoàn tiền là 7-14 ngày làm việc, tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
+with query filter
+ 1. shopee-return-refund-general#3 | doc_id=shopee-return-refund-general | audience=buyer | score=0.267303
+    source=https://help.shopee.vn/portal/4/article/188931
+    p dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart.
+
+## Hoàn mã giảm giá và Shopee Xu
+
+Việc hoàn mã phụ thuộc hình thức hoàn tiền và việc yêu cầu áp dụng cho toàn bộ hay một phần đơn hàng. Với phương án trả hàng và hoàn tiền cho toàn bộ sản phẩm, mã giảm giá được hoàn; khi chỉ khiếu nại một phần sản phẩm, mã không được hoàn. Shopee Xu được hoàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được
+ 2. shopee-return-refund-general#4 | doc_id=shopee-return-refund-general | audience=buyer | score=0.167533
+    source=https://help.shopee.vn/portal/4/article/188931
+    oàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được hoàn. Trang nguồn còn nêu các ngoại lệ theo từng loại voucher, nên cần xem trang gốc khi trả lời câu hỏi về một mã cụ thể.
+ 3. shopee-return-shipping-fees#1 | doc_id=shopee-return-shipping-fees | audience=buyer | score=0.151800
+    source=https://help.shopee.vn/portal/4/article/189477
+     chứng trả hàng lên chi tiết yêu cầu. Cần giữ hóa đơn với mã vận đơn, số điện thoại và địa chỉ người nhận; không thu hộ.
+
+## Phí vận chuyển
+
+Nếu trả toàn bộ sản phẩm và được đồng ý hoàn đủ giá trị đã thanh toán, phí vận chuyển ban đầu được hoàn; nếu chỉ trả một phần sản phẩm, phí ban đầu không được hoàn. Với hình thức tự sắp xếp, khoản hỗ trợ phí trả hàng được xử lý trong **3–5 ngày làm việc** khi đáp ứng điều kiện: đơn Shopee Mall được hoàn khoản phí; đơn ngoài Shopee Mall có thể được hỗ trợ **
+Agent answer: Việc hoàn mã phụ thuộc hình thức hoàn tiền và việc yêu cầu áp dụng cho toàn bộ hay một phần đơn hàng. Với phương án trả hàng và hoàn tiền cho toàn bộ sản phẩm, mã giảm giá được hoàn; khi chỉ khiếu nại một phần sản phẩm, mã không được hoàn. Shopee Xu được hoàn theo số lượng hoặc tỷ lệ giá trị sản phẩm được [1]
+Nếu trả toàn bộ sản phẩm và được đồng ý hoàn đủ giá trị đã thanh toán, phí vận chuyển ban đầu được hoàn; nếu chỉ trả một phần sản phẩm, phí ban đầu không được hoàn. Với hình thức tự sắp xếp, khoản hỗ trợ phí trả hàng được xử lý trong **3–5 ngày làm việc** khi đáp ứng điều kiện: đơn Shopee Mall được hoàn khoản phí; đơn ngoài Shopee Mall có thể được hỗ trợ ** [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+TOTAL doc_only=2/10; evidence=0/10; automatic=0/10
+
+=== recursive | 39 chunks | avg_length=263.31 ===
+
+Q1: Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không?
+filter={'audience': 'seller'}
+Gold: Người bán không chịu chi phí vận chuyển chiều hoàn trong một số trường hợp, gồm khi người mua chọn tự sắp xếp trả hàng.
+with query filter
+ 1. shopee-seller-return-refund-rights#3 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.082414
+    source=https://help.shopee.vn/portal/4/article/77251
+
+ 2. shopee-seller-return-refund-rights#7 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.082414
+    source=https://help.shopee.vn/portal/4/article/77251
+
+ 3. shopee-seller-return-refund-rights#11 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.082414
+    source=https://help.shopee.vn/portal/4/article/77251
+
+Agent answer: Không tìm thấy thông tin.
+doc_rank=1; evidence_rank=None; answer_marker_match=False; doc_only=2; evidence=0; automatic=0
+A/B WITHOUT FILTER
+ 1. shopee-return-refund-general#1 | doc_id=shopee-return-refund-general | audience=buyer | score=0.205495
+    source=https://help.shopee.vn/portal/4/article/188931
+    | Loại đơn hàng | Thời hạn theo trang nguồn |
+|---|---|
+| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |
+| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |
+| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |
+| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công |
+ 2. shopee-refund-timing#0 | doc_id=shopee-refund-timing | audience=buyer | score=0.164598
+    source=https://help.shopee.vn/portal/4/article/189473
+    # Thời gian nhận tiền hoàn theo phương thức thanh toán
+
+Sau khi gửi trả hàng, người mua có thể xem thông báo xác nhận hoàn tiền tại **Thông báo → Cập nhật đơn hàng** trong ứng dụng Shopee. Thời gian dưới đây tính sau khi Shopee chấp nhận hoàn tiền và còn phụ thuộc phương thức thanh toán/kênh nhận tiền.
+ 3. shopee-instant-refund-offer#0 | doc_id=shopee-instant-refund-offer | audience=buyer | score=0.162848
+    source=https://help.shopee.vn/portal/4/article/190387
+    # Người mua phản hồi đề xuất hoàn tiền ngay của người bán
+
+Sau khi người mua tạo yêu cầu trả hàng/hoàn tiền, người bán có thể đề xuất **hoàn tiền ngay một phần hoặc toàn bộ giá trị đơn hàng**. Người mua vào **Tôi → Trả hàng/Hoàn tiền → Chi tiết Trả hàng Hoàn tiền** của đơn liên quan và kiểm tra số tiền đề xuất.
+Agent answer: | Loại đơn hàng | Thời hạn theo trang nguồn |
+|---|---|
+| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |
+| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |
+| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |
+| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công | [1]
+Sau khi người mua tạo yêu cầu trả hàng/hoàn tiền, người bán có thể đề xuất **hoàn tiền ngay một phần hoặc toàn bộ giá trị đơn hàng**. Người mua vào **Tôi → Trả hàng/Hoàn tiền → Chi tiết Trả hàng Hoàn tiền** của đơn liên quan và kiểm tra số tiền đề xuất. [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào?
+filter=None
+Gold: Thực phẩm tươi sống hoặc đông lạnh có thời hạn 24 giờ từ khi đơn cập nhật giao hàng thành công, trừ lý do chưa nhận hàng.
+with query filter
+ 1. shopee-submit-return-request#0 | doc_id=shopee-submit-return-request | audience=buyer | score=0.248854
+    source=https://help.shopee.vn/portal/4/article/79233
+    # Cách gửi yêu cầu trả hàng và hoàn tiền
+
+## Gửi từ đơn hàng
+
+Trong ứng dụng Shopee, vào **Tôi → Chờ giao hàng/Đã giao**, chọn đơn cần xử lý và bấm **Trả hàng/Hoàn tiền**. Chọn tình huống đã nhận hàng nhưng có vấn đề hoặc chưa nhận/nhận thiếu hàng; sau đó chọn sản phẩm, lý do khiếu nại và phương án xử lý nếu hệ thống yêu cầu. Điền mô tả, hình ảnh/video làm bằng chứng và email liên hệ rồi gửi yêu cầu.
+
+## Gửi qua Trò Chuyện Với Shopee
+ 2. shopee-seller-return-refund-rights#8 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.245676
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
+ 3. shopee-seller-return-refund-rights#10 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.188043
+    source=https://help.shopee.vn/portal/4/article/77251
+    Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.
+Agent answer: Trong ứng dụng Shopee, vào **Tôi → Chờ giao hàng/Đã giao**, chọn đơn cần xử lý và bấm **Trả hàng/Hoàn tiền**. Chọn tình huống đã nhận hàng nhưng có vấn đề hoặc chưa nhận/nhận thiếu hàng; sau đó chọn sản phẩm, lý do khiếu nại và phương án xử lý nếu hệ thống yêu cầu. Điền mô tả, hình ảnh/video làm bằng chứng và email liên hệ rồi gửi yêu cầu. [1]
+Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua. [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q3: Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì?
+filter=None
+Gold: Người mua cần chọn sản phẩm, lý do khiếu nại, phương án xử lý nếu hệ thống yêu cầu, điền mô tả, hình ảnh hoặc video bằng chứng và email liên hệ.
+with query filter
+ 1. shopee-restricted-returns#2 | doc_id=shopee-restricted-returns | audience=buyer | score=0.231672
+    source=https://help.shopee.vn/portal/4/article/79465
+    Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể được ghi trên trang chi tiết hoặc hình ảnh sản phẩm.
+ 2. shopee-seller-return-refund-rights#9 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.218111
+    source=https://help.shopee.vn/portal/4/article/77251
+    Shopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua.
+ 3. shopee-submit-return-request#2 | doc_id=shopee-submit-return-request | audience=buyer | score=0.205521
+    source=https://help.shopee.vn/portal/4/article/79233
+    Trang hướng dẫn cho biết yêu cầu thường được xử lý trong **3–5 ngày làm việc**; kết quả được thông báo qua ứng dụng hoặc email. Nếu yêu cầu được chấp nhận, thời gian nhận tiền có thể là **1–14 ngày làm việc** tùy phương thức thanh toán. Với phương án trả hàng và hoàn tiền, người mua cần gửi lại sản phẩm qua bưu tá đến lấy hoặc mang đến bưu cục; người bán/Shopee sẽ xem xét hàng khi nhận lại.
+Agent answer: Trang hướng dẫn cho biết yêu cầu thường được xử lý trong **3–5 ngày làm việc**; kết quả được thông báo qua ứng dụng hoặc email. Nếu yêu cầu được chấp nhận, thời gian nhận tiền có thể là **1–14 ngày làm việc** tùy phương thức thanh toán. Với phương án trả hàng và hoàn tiền, người mua cần gửi lại sản phẩm qua bưu tá đến lấy hoặc mang đến bưu cục; người bán/Shopee sẽ xem xét hàng khi nhận lại. [3]
+Shopee có thể tự động hoàn tiền cho người mua nếu người bán không phản hồi trong thời hạn quy định. Nếu người bán đề xuất hoàn tiền ngay, số tiền hai bên thỏa thuận không được thấp hơn **50% giá trị sản phẩm hoàn trả**. Nếu người mua khiếu nại vì đề xuất dưới mức này, chính sách cho phép Shopee cấn trừ khoản chênh lệch từ số dư của người bán để thanh toán cho người mua. [2]
+doc_rank=3; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
+
+Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng.
+filter=None
+Gold: Ba hình thức là đơn vị vận chuyển đến lấy, trả tại bưu cục được hệ thống đề xuất và tự sắp xếp. Hai hình thức đầu miễn phí trả hàng; tự sắp xếp thì người mua thanh toán trước phí.
+with query filter
+ 1. shopee-restricted-returns#2 | doc_id=shopee-restricted-returns | audience=buyer | score=0.301837
+    source=https://help.shopee.vn/portal/4/article/79465
+    Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể được ghi trên trang chi tiết hoặc hình ảnh sản phẩm.
+ 2. shopee-seller-return-refund-rights#8 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.224954
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
+ 3. shopee-instant-refund-offer#1 | doc_id=shopee-instant-refund-offer | audience=buyer | score=0.205616
+    source=https://help.shopee.vn/portal/4/article/190387
+    Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với người bán hoặc chọn **Tôi muốn trả hàng** để tiếp tục quy trình trả sản phẩm và nhận toàn bộ số tiền theo yêu cầu ban đầu.
+Agent answer: Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với người bán hoặc chọn **Tôi muốn trả hàng** để tiếp tục quy trình trả sản phẩm và nhận toàn bộ số tiền theo yêu cầu ban đầu. [3]
+Trang nguồn lưu ý danh sách có thể thay đổi theo từng thời điểm; thông tin về sản phẩm cụ thể có thể được ghi trên trang chi tiết hoặc hình ảnh sản phẩm. [1]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền?
+filter=None
+Gold: Với thẻ tín dụng hoặc ghi nợ, thời gian hoàn tiền là 7-14 ngày làm việc, tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
+with query filter
+ 1. shopee-instant-refund-offer#1 | doc_id=shopee-instant-refund-offer | audience=buyer | score=0.190390
+    source=https://help.shopee.vn/portal/4/article/190387
+    Nếu đồng ý, người mua chọn **Trao đổi thêm → Đồng ý**; tiền được hoàn ngay mà không cần trả hàng. Nếu không đồng ý, người mua có thể trao đổi thêm với người bán hoặc chọn **Tôi muốn trả hàng** để tiếp tục quy trình trả sản phẩm và nhận toàn bộ số tiền theo yêu cầu ban đầu.
+ 2. shopee-seller-return-refund-rights#10 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.190189
+    source=https://help.shopee.vn/portal/4/article/77251
+    Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.
+ 3. shopee-handle-return-request#1 | doc_id=shopee-handle-return-request | audience=buyer | score=0.167602
+    source=https://help.shopee.vn/portal/4/article/190242
+    - **Hoàn tiền ngay:** người mua nhận tiền mà không cần trả hàng.
+- **Trả hàng và hoàn tiền:** người mua chọn hình thức gửi hàng và hoàn tất việc gửi hàng về Shopee/người bán trong **6 ngày** từ khi nhận thông báo gửi trả hàng.
+
+## Tình trạng hàng hoàn
+Agent answer: Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua. [2]
+- **Hoàn tiền ngay:** người mua nhận tiền mà không cần trả hàng.
+- **Trả hàng và hoàn tiền:** người mua chọn hình thức gửi hàng và hoàn tất việc gửi hàng về Shopee/người bán trong **6 ngày** từ khi nhận thông báo gửi trả hàng. [3]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+TOTAL doc_only=3/10; evidence=0/10; automatic=0/10
+
+=== heading | 44 chunks | avg_length=254.80 ===
+
+Q1: Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không?
+filter={'audience': 'seller'}
+Gold: Người bán không chịu chi phí vận chuyển chiều hoàn trong một số trường hợp, gồm khi người mua chọn tự sắp xếp trả hàng.
+with query filter
+ 1. shopee-seller-return-refund-rights#1 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.234228
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Phản hồi yêu cầu — Mục 5 của chính sách
+ 2. shopee-seller-return-refund-rights#9 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.172278
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
+Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua.
+ 3. shopee-seller-return-refund-rights#5 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.110221
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Chi phí vận chuyển hàng hoàn — Mục 7
+Người bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định.
+Agent answer: Người bán chịu chi phí vận chuyển chiều hoàn trả trong các trường hợp Shopee chấp thuận trả hàng mà lỗi không thuộc người mua hoặc đơn vị vận chuyển, đơn giao không thành công, và trường hợp ngoại lệ khác do Shopee quyết định. [3]
+Khi Shopee đã thanh toán cho người bán nhưng sau đó chấp nhận yêu cầu hoàn tiền hợp lệ, Shopee điều chỉnh khoản đã thanh toán để hoàn tiền cho người mua. [2]
+doc_rank=1; evidence_rank=None; answer_marker_match=False; doc_only=2; evidence=0; automatic=0
+A/B WITHOUT FILTER
+ 1. shopee-return-refund-general#6 | doc_id=shopee-return-refund-general | audience=buyer | score=0.286387
+    source=https://help.shopee.vn/portal/4/article/188931
+    ## Một số lý do được nêu trong trang nguồn
+Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart.
+ 2. shopee-refund-timing#3 | doc_id=shopee-refund-timing | audience=buyer | score=0.271777
+    source=https://help.shopee.vn/portal/4/article/189473
+    # Thời gian nhận tiền hoàn theo phương thức thanh toán
+Với thanh toán khi nhận hàng hoặc thanh toán QR, kênh nhận tiền có thể là ShopeePay hoặc tài khoản ngân hàng theo lựa chọn hợp lệ khi gửi yêu cầu. Trang nguồn yêu cầu tài khoản ngân hàng chính xác và ví ShopeePay còn hoạt động. Với giao dịch SPayLater trả góp đã ghi nhận, người mua vẫn phải tiếp tục trả góp; số tiền hàng được hoàn trước vào SPayLater để cấn trừ hóa đơn, không gồm phí chuyển đổi trả góp.
+ 3. shopee-seller-return-refund-rights#1 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.234228
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Phản hồi yêu cầu — Mục 5 của chính sách
+Agent answer: Với thanh toán khi nhận hàng hoặc thanh toán QR, kênh nhận tiền có thể là ShopeePay hoặc tài khoản ngân hàng theo lựa chọn hợp lệ khi gửi yêu cầu. Trang nguồn yêu cầu tài khoản ngân hàng chính xác và ví ShopeePay còn hoạt động. Với giao dịch SPayLater trả góp đã ghi nhận, người mua vẫn phải tiếp tục trả góp; số tiền hàng được hoàn trước vào SPayLater để cấn trừ hóa đơn, không gồm phí chuyển đổi trả góp. [2]
+Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart. [1]
+doc_rank=3; evidence_rank=None; answer_marker_match=False; doc_only=1; evidence=0; automatic=0
+
+Q2: Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào?
+filter=None
+Gold: Thực phẩm tươi sống hoặc đông lạnh có thời hạn 24 giờ từ khi đơn cập nhật giao hàng thành công, trừ lý do chưa nhận hàng.
+with query filter
+ 1. shopee-refund-timing#4 | doc_id=shopee-refund-timing | audience=buyer | score=0.322547
+    source=https://help.shopee.vn/portal/4/article/189473
+    # Thời gian nhận tiền hoàn theo phương thức thanh toán
+Nếu người bán khiếu nại, Shopee thông báo kết quả cuối cùng trong khoảng **3–5 ngày làm việc** từ lúc tiếp nhận khiếu nại.
+ 2. shopee-return-shipping-fees#1 | doc_id=shopee-return-shipping-fees | audience=buyer | score=0.289550
+    source=https://help.shopee.vn/portal/4/article/189477
+    ## Ba hình thức gửi hàng
+
+- **Đơn vị vận chuyển đến lấy:** người mua chọn thời gian, địa chỉ, đóng gói và dán phiếu hoặc ghi mã vận đơn; hình thức này miễn phí trả hàng.
+- **Trả tại bưu cục được hệ thống đề xuất:** đóng gói, dán phiếu hoặc ghi mã vận đơn rồi mang đến bưu cục; hình thức này miễn phí trả hàng.
+ 3. shopee-submit-return-request#2 | doc_id=shopee-submit-return-request | audience=buyer | score=0.282468
+    source=https://help.shopee.vn/portal/4/article/79233
+    ## Gửi qua Trò Chuyện Với Shopee
+
+Tại **Tôi → Trò Chuyện Với Shopee → Khiếu nại trả hàng hoàn tiền**, chọn đơn hàng, xác nhận tình trạng nhận hàng, chọn lý do, tải bằng chứng ảnh/video và gửi yêu cầu.
+Agent answer: Tại **Tôi → Trò Chuyện Với Shopee → Khiếu nại trả hàng hoàn tiền**, chọn đơn hàng, xác nhận tình trạng nhận hàng, chọn lý do, tải bằng chứng ảnh/video và gửi yêu cầu. [3]
+- **Đơn vị vận chuyển đến lấy:** người mua chọn thời gian, địa chỉ, đóng gói và dán phiếu hoặc ghi mã vận đơn; hình thức này miễn phí trả hàng.
+- **Trả tại bưu cục được hệ thống đề xuất:** đóng gói, dán phiếu hoặc ghi mã vận đơn rồi mang đến bưu cục; hình thức này miễn phí trả hàng. [2]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q3: Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì?
+filter=None
+Gold: Người mua cần chọn sản phẩm, lý do khiếu nại, phương án xử lý nếu hệ thống yêu cầu, điền mô tả, hình ảnh hoặc video bằng chứng và email liên hệ.
+with query filter
+ 1. shopee-return-refund-general#2 | doc_id=shopee-return-refund-general | audience=buyer | score=0.251183
+    source=https://help.shopee.vn/portal/4/article/188931
+    ## Thời hạn gửi yêu cầu
+
+| Loại đơn hàng | Thời hạn theo trang nguồn |
+|---|---|
+| Thực phẩm tươi sống, đông lạnh (trừ lý do chưa nhận hàng) | Trong **24 giờ** từ khi đơn cập nhật giao hàng thành công |
+| Người bán tự vận chuyển, người mua đã bấm “Đã nhận được hàng” | **15 ngày** từ khi bấm nút |
+| Người bán tự vận chuyển, chưa bấm “Đã nhận được hàng” | **20 ngày** từ khi đơn cập nhật lấy hàng thành công |
+| Các đơn hàng khác | **15 ngày** từ khi đơn cập nhật giao hàng thành công |
+ 2. shopee-return-refund-general#6 | doc_id=shopee-return-refund-general | audience=buyer | score=0.231611
+    source=https://help.shopee.vn/portal/4/article/188931
+    ## Một số lý do được nêu trong trang nguồn
+Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart.
+ 3. shopee-return-refund-general#3 | doc_id=shopee-return-refund-general | audience=buyer | score=0.216410
+    source=https://help.shopee.vn/portal/4/article/188931
+    ## Thời hạn gửi yêu cầu
+Người mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại.
+Agent answer: Người mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại. [3]
+Từ **24/11/2025**, lý do đổi ý áp dụng cho người mua hạng Vàng, Kim Cương hoặc đã đăng ký Shopee VIP, với các loại hàng bị loại trừ như sản phẩm hạn chế trả hàng và hàng mua tại Shopee Mart. [2]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q4: Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng.
+filter=None
+Gold: Ba hình thức là đơn vị vận chuyển đến lấy, trả tại bưu cục được hệ thống đề xuất và tự sắp xếp. Hai hình thức đầu miễn phí trả hàng; tự sắp xếp thì người mua thanh toán trước phí.
+with query filter
+ 1. shopee-seller-return-refund-rights#11 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.302599
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
+Chính sách nguồn ghi ngày đăng tải **04/03/2026**, hiệu lực từ **11/03/2026**.
+ 2. shopee-seller-return-refund-rights#2 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.225727
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Phản hồi yêu cầu — Mục 5 của chính sách
+Khi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác.
+ 3. shopee-seller-return-refund-rights#7 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.224954
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Hoàn tiền và khoản thanh toán cho người bán — Mục 9.3, 9.5–9.6
+Agent answer: Khi người mua yêu cầu trả hàng hoặc hoàn tiền, Shopee xem xét và thông báo yêu cầu hoặc quyết định xử lý cho người bán qua ứng dụng, email hoặc tin nhắn. Nếu không đồng ý với quyết định hoàn tiền, chưa nhận hàng hoàn, hoặc hàng hoàn có vấn đề, người bán cần phản hồi trong **2 ngày lịch** kể từ khi nhận thông báo, trừ khi Shopee quy định thời hạn khác. [2]
+Chính sách nguồn ghi ngày đăng tải **04/03/2026**, hiệu lực từ **11/03/2026**. [1]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+
+Q5: Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền?
+filter=None
+Gold: Với thẻ tín dụng hoặc ghi nợ, thời gian hoàn tiền là 7-14 ngày làm việc, tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.
+with query filter
+ 1. shopee-return-refund-general#3 | doc_id=shopee-return-refund-general | audience=buyer | score=0.208487
+    source=https://help.shopee.vn/portal/4/article/188931
+    ## Thời hạn gửi yêu cầu
+Người mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại.
+ 2. shopee-seller-return-refund-rights#1 | doc_id=shopee-seller-return-refund-rights | audience=seller | score=0.192095
+    source=https://help.shopee.vn/portal/4/article/77251
+    ## Phản hồi yêu cầu — Mục 5 của chính sách
+ 3. shopee-return-shipping-fees#4 | doc_id=shopee-return-shipping-fees | audience=buyer | score=0.189920
+    source=https://help.shopee.vn/portal/4/article/189477
+    ## Phí vận chuyển
+Điều kiện hỗ trợ gồm yêu cầu trả hàng được chấp nhận, thông tin và mã vận đơn hợp lệ, hành trình giao hàng hoàn thành, người bán/Shopee đồng ý hoàn tiền, và đơn ban đầu không dùng kênh người bán tự vận chuyển. Trang nguồn cũng nêu ngoại lệ nếu Shopee không thể kiểm tra hành trình hàng hoàn khi có khiếu nại.
+Agent answer: Điều kiện hỗ trợ gồm yêu cầu trả hàng được chấp nhận, thông tin và mã vận đơn hợp lệ, hành trình giao hàng hoàn thành, người bán/Shopee đồng ý hoàn tiền, và đơn ban đầu không dùng kênh người bán tự vận chuyển. Trang nguồn cũng nêu ngoại lệ nếu Shopee không thể kiểm tra hành trình hàng hoàn khi có khiếu nại. [3]
+Người mua vẫn có thể gửi yêu cầu sau khi bấm “Đã nhận được hàng” nếu còn trong thời hạn áp dụng. Trang nguồn cho biết yêu cầu thường được phản hồi trong **3–5 ngày làm việc**; sản phẩm hạn chế trả hàng được Shopee xem xét theo từng vấn đề khiếu nại. [1]
+doc_rank=None; evidence_rank=None; answer_marker_match=False; doc_only=0; evidence=0; automatic=0
+TOTAL doc_only=2/10; evidence=0/10; automatic=0/10

@@ -1,48 +1,48 @@
 [
   {
     "id": "Q1",
-    "query": "Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không?",
+    "query": "Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không?",
     "metadata_filter": {"audience": "seller"},
-    "gold_doc_id": "seller-phan-hoi",
-    "gold_answer": "Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước.",
-    "evidence_phrases": ["miễn phí chiều hoàn cho shop", "Tự sắp xếp"],
-    "source_section": "7.2, điểm 5",
+    "gold_doc_id": "shopee-seller-return-refund-rights",
+    "gold_answer": "Người bán không chịu chi phí vận chuyển chiều hoàn trong một số trường hợp, gồm khi người mua chọn tự sắp xếp trả hàng.",
+    "evidence_phrases": ["Người bán không chịu chi phí này", "người mua chọn tự sắp xếp trả hàng"],
+    "source_section": "Chi phí vận chuyển hàng hoàn — Mục 7",
     "requires_filter": true
   },
   {
     "id": "Q2",
-    "query": "Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào?",
+    "query": "Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào?",
     "metadata_filter": null,
-    "gold_doc_id": "buyer-dieu-kien",
-    "gold_answer": "24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng.",
-    "evidence_phrases": ["24 giờ", "ngoại trừ khiếu nại chưa nhận hàng"],
-    "source_section": "1.2"
+    "gold_doc_id": "shopee-return-refund-general",
+    "gold_answer": "Thực phẩm tươi sống hoặc đông lạnh có thời hạn 24 giờ từ khi đơn cập nhật giao hàng thành công, trừ lý do chưa nhận hàng.",
+    "evidence_phrases": ["Trong **24 giờ**", "trừ lý do chưa nhận hàng"],
+    "source_section": "Thời hạn gửi yêu cầu"
   },
   {
     "id": "Q3",
-    "query": "Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi?",
+    "query": "Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì?",
     "metadata_filter": null,
-    "gold_doc_id": "buyer-gui-yeu-cau",
-    "gold_answer": "Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi.",
-    "evidence_phrases": ["mô tả tình trạng", "ảnh hoặc video", "email liên hệ"],
-    "source_section": "1, Cách 1, bước 7-8"
+    "gold_doc_id": "shopee-submit-return-request",
+    "gold_answer": "Người mua cần chọn sản phẩm, lý do khiếu nại, phương án xử lý nếu hệ thống yêu cầu, điền mô tả, hình ảnh hoặc video bằng chứng và email liên hệ.",
+    "evidence_phrases": ["chọn sản phẩm", "Điền mô tả", "hình ảnh/video làm bằng chứng", "email liên hệ"],
+    "source_section": "Gửi từ đơn hàng"
   },
   {
     "id": "Q4",
-    "query": "Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua?",
+    "query": "Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng.",
     "metadata_filter": null,
-    "gold_doc_id": "buyer-gui-hang",
-    "gold_answer": "Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí.",
-    "evidence_phrases": ["hẹn lấy tại nhà", "bưu cục do hệ thống đề xuất", "hai lựa chọn đầu miễn phí"],
-    "source_section": "1.1"
+    "gold_doc_id": "shopee-return-shipping-fees",
+    "gold_answer": "Ba hình thức là đơn vị vận chuyển đến lấy, trả tại bưu cục được hệ thống đề xuất và tự sắp xếp. Hai hình thức đầu miễn phí trả hàng; tự sắp xếp thì người mua thanh toán trước phí.",
+    "evidence_phrases": ["Đơn vị vận chuyển đến lấy", "Trả tại bưu cục được hệ thống đề xuất", "Tự sắp xếp"],
+    "source_section": "Ba hình thức gửi hàng"
   },
   {
     "id": "Q5",
-    "query": "Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt?",
+    "query": "Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền?",
     "metadata_filter": null,
-    "gold_doc_id": "buyer-nhan-tien",
-    "gold_answer": "Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.",
-    "evidence_phrases": ["chính tài khoản thẻ đã trả tiền", "7-14 ngày làm việc"],
-    "source_section": "Bảng 1"
+    "gold_doc_id": "shopee-refund-timing",
+    "gold_answer": "Với thẻ tín dụng hoặc ghi nợ, thời gian hoàn tiền là 7-14 ngày làm việc, tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền.",
+    "evidence_phrases": ["Thẻ tín dụng/ghi nợ", "**7–14 ngày làm việc**", "sau khi Shopee chấp nhận hoàn tiền"],
+    "source_section": "Bảng thời gian nhận tiền hoàn"
   }
 ]

@@ -22,11 +22,14 @@ chính thức, không dùng nguồn mẫu hư cấu trong data/ecommerce.
 
 | # | doc_id | Tài liệu / nguồn | Lấy dữ liệu / hiệu lực | Ký tự thân | Metadata |
 |---|---|---|---|---|---|
-| 1 | buyer-dieu-kien | [Điều kiện và thời hạn yêu cầu của người mua](https://help.shopee.vn/portal/4/article/188931) | 2026-09-20 / not-stated | 773 | buyer; eligibility |
-| 2 | buyer-gui-hang | [Cách gửi lại sản phẩm và phí vận chuyển](https://help.shopee.vn/portal/4/article/189477) | 2026-09-20 / not-stated | 808 | buyer; return-shipping |
-| 3 | buyer-gui-yeu-cau | [Thao tác tạo yêu cầu trên ứng dụng](https://help.shopee.vn/portal/4/article/79233) | 2026-09-20 / not-stated | 766 | buyer; procedure |
-| 4 | buyer-nhan-tien | [Tiền hoàn về đâu và bao lâu](https://help.shopee.vn/portal/4/article/189473) | 2026-09-20 / not-stated | 835 | buyer; refund-payment |
-| 5 | seller-phan-hoi | [Phản hồi và trách nhiệm của người bán](https://help.shopee.vn/portal/4/article/77251) | 2026-09-20 / 2026-03-11 | 820 | seller; dispute |
+| 1 | shopee-handle-return-request | [Shopee xử lý yêu cầu trả hàng và hoàn tiền](https://help.shopee.vn/portal/4/article/190242) | 2026-09-20 / not-stated | 1138 | buyer; return-process |
+| 2 | shopee-instant-refund-offer | [Người mua phản hồi đề xuất hoàn tiền ngay của người bán](https://help.shopee.vn/portal/4/article/190387) | 2026-09-20 / not-stated | 587 | buyer; refund-process |
+| 3 | shopee-refund-timing | [Thời gian nhận tiền hoàn theo phương thức thanh toán](https://help.shopee.vn/portal/4/article/189473) | 2026-09-20 / not-stated | 1393 | buyer; refund-timing |
+| 4 | shopee-restricted-returns | [Danh mục sản phẩm hạn chế trả hàng](https://help.shopee.vn/portal/4/article/79465) | 2026-09-20 / not-stated | 875 | buyer; return-exceptions |
+| 5 | shopee-return-refund-general | [Quy định chung về trả hàng và hoàn tiền](https://help.shopee.vn/portal/4/article/188931) | 2026-09-20 / not-stated | 1973 | buyer; return-conditions |
+| 6 | shopee-return-shipping-fees | [Cách gửi hàng hoàn trả và phí vận chuyển](https://help.shopee.vn/portal/4/article/189477) | 2026-09-20 / not-stated | 1367 | buyer; return-shipping |
+| 7 | shopee-seller-return-refund-rights | [Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền](https://help.shopee.vn/portal/4/article/77251) | 2026-09-20 / 2026-03-11 | 1920 | seller; seller-rights |
+| 8 | shopee-submit-return-request | [Cách gửi yêu cầu trả hàng và hoàn tiền](https://help.shopee.vn/portal/4/article/79233) | 2026-09-20 / not-stated | 1016 | buyer; return-process |
 
 - [x] Đã kiểm tra robots: help.shopee.vn trả HTTP 200, Allow: /.
 - [x] Không đăng nhập, không có dữ liệu cá nhân khách hàng, không lưu khóa bí mật.
@@ -43,16 +46,14 @@ thay bằng trích đoạn được phép trước khi coi CP2 hoàn tất đầ
 
 | Trường | Kiểu | Ví dụ | Mục đích |
 |---|---|---|---|
-| doc_id | str | seller-phan-hoi | Định danh file gốc, delete và đánh giá |
-| title | str | Phản hồi và trách nhiệm của người bán | Đọc hiểu nguồn |
+| doc_id | str | shopee-seller-return-refund-rights | Định danh file gốc, delete và đánh giá |
+| title | str | Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền | Đọc hiểu nguồn |
 | source_url | str URL | https://help.shopee.vn/portal/4/article/77251 | Truy vết nguồn chính thức |
 | retrieved_at | str ISO date | 2026-09-20 | Thời điểm kiểm tra |
 | document_version | str | 2026-03-11 hoặc not-stated | Phân biệt hiệu lực với ngày crawl |
 | audience | str enum | buyer / seller | Lọc trước retrieval |
-| category | str | dispute | Lọc chủ đề hẹp |
+| category | str | seller-rights | Lọc chủ đề hẹp |
 | language | str | vi | Lọc ngôn ngữ |
-| collection_method | str | web-read-and-factual-summary | Không nhầm bản ghi với nguyên văn |
-| source_sections | str | 5; 7.2; 12.2 | Đối chiếu đúng mục nguồn |
 
 ## 2. Thiết kế chiến lược
 
@@ -63,15 +64,15 @@ thay bằng trích đoạn được phép trước khi coi CP2 hoàn tất đầ
 
 | Tài liệu | Chiến lược | Count | Avg length | Ngữ cảnh |
 |---|---|---|---|---|
-| buyer-dieu-kien | fixed_size | 2 | 411.50 | Có overlap; có thể cắt giữa chữ |
-| buyer-dieu-kien | by_sentences | 4 | 191.75 | Giữ dấu câu; không hiểu viết tắt |
-| buyer-dieu-kien | recursive | 2 | 386.50 | Ưu tiên đoạn; không overlap |
-| buyer-gui-hang | fixed_size | 2 | 429.00 | Có overlap; có thể cắt giữa chữ |
-| buyer-gui-hang | by_sentences | 4 | 200.75 | Giữ dấu câu; không hiểu viết tắt |
-| buyer-gui-hang | recursive | 3 | 269.33 | Ưu tiên đoạn; không overlap |
-| seller-phan-hoi | fixed_size | 2 | 435.00 | Có overlap; có thể cắt giữa chữ |
-| seller-phan-hoi | by_sentences | 4 | 203.50 | Giữ dấu câu; không hiểu viết tắt |
-| seller-phan-hoi | recursive | 2 | 410.00 | Ưu tiên đoạn; không overlap |
+| shopee-return-refund-general | fixed_size | 5 | 434.60 | Có overlap; có thể cắt giữa chữ |
+| shopee-return-refund-general | by_sentences | 4 | 491.75 | Giữ dấu câu; không hiểu viết tắt |
+| shopee-return-refund-general | recursive | 5 | 394.60 | Ưu tiên đoạn; không overlap |
+| shopee-return-shipping-fees | fixed_size | 3 | 489.00 | Có overlap; có thể cắt giữa chữ |
+| shopee-return-shipping-fees | by_sentences | 3 | 454.33 | Giữ dấu câu; không hiểu viết tắt |
+| shopee-return-shipping-fees | recursive | 5 | 273.40 | Ưu tiên đoạn; không overlap |
+| shopee-seller-return-refund-rights | fixed_size | 5 | 424.00 | Có overlap; có thể cắt giữa chữ |
+| shopee-seller-return-refund-rights | by_sentences | 4 | 478.50 | Giữ dấu câu; không hiểu viết tắt |
+| shopee-seller-return-refund-rights | recursive | 13 | 147.69 | Ưu tiên đoạn; không overlap |
 
 ### Lý do chọn cấu hình
 
@@ -96,13 +97,13 @@ chunks.extend(prefix + child for child in children)
 ### So sánh cùng dữ liệu và truy vấn
 
 Backend: **mock:md5-64-v1**, top_k=3, cùng file gold, cùng responder, cùng
-metadata filter; chỉ thay chunker. Timestamp UTC: 2026-09-20T03:16:03.996452+00:00.
+metadata filter; chỉ thay chunker. Timestamp UTC: 2026-09-20T03:38:19.521324+00:00.
 
 | Phân công | Chiến lược | Chunk | Avg length | Doc-only /10 | Nội dung /10 | Proxy agent /10 |
 |---|---|---|---|---|---|---|
-| Đạt | fixed_size | 10 | 425.20 | 5 | 2 | 2 |
-| Cường | recursive | 11 | 363.82 | 4 | 3 | 3 |
-| Trang | heading | 15 | 272.60 | 4 | 1 | 1 |
+| Đạt | fixed_size | 26 | 429.58 | 2 | 0 | 0 |
+| Cường | recursive | 39 | 263.31 | 3 | 0 | 0 |
+| Trang | heading | 44 | 254.80 | 2 | 0 | 0 |
 
 Recursive có điểm nội dung cao nhất **trong lần chạy mock này**. Không suy ra nó
 thắng về ngữ nghĩa: mock dùng MD5, khác ranh giới là khác vector ngẫu nhiên. Kết luận
@@ -118,11 +119,11 @@ kiểm tra với các bản ghi và mục nguồn. Không đưa gold/evidence_ph
 
 | # | Câu hỏi | Gold answer | File / mục nguồn | Filter |
 |---|---|---|---|---|
-| Q1 | Tự sắp xếp gửi trả hàng thì tôi có phải trả phí vận chuyển không? | Với vai trò người bán, được miễn phí chiều hoàn khi khách dùng Tự sắp xếp; người mua vẫn phải ứng phí trước. | seller-phan-hoi / 7.2, điểm 5 | {'audience': 'seller'} |
-| Q2 | Thực phẩm tươi sống hoặc đông lạnh có thời hạn yêu cầu trả hàng bao lâu và ngoại lệ nào? | 24 giờ từ khi cập nhật giao thành công, ngoại trừ khiếu nại chưa nhận hàng. | buyer-dieu-kien / 1.2 | Không |
-| Q3 | Biểu mẫu tạo yêu cầu trả hàng cần điền thông tin và bằng chứng gì trước khi gửi? | Mô tả tình trạng, ảnh hoặc video làm bằng chứng, email liên hệ; kiểm tra rồi gửi. | buyer-gui-yeu-cau / 1, Cách 1, bước 7-8 | Không |
-| Q4 | Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí cho người mua? | Hẹn lấy tại nhà, gửi ở bưu cục do hệ thống đề xuất, Tự sắp xếp; hai hình thức đầu miễn phí. | buyer-gui-hang / 1.1 | Không |
-| Q5 | Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn về đâu, sau bao lâu kể từ khi được duyệt? | Về tài khoản thẻ đã thanh toán trong 7-14 ngày làm việc tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền. | buyer-nhan-tien / Bảng 1 | Không |
+| Q1 | Khi người mua chọn tự sắp xếp trả hàng, người bán có phải chịu chi phí vận chuyển chiều hoàn không? | Người bán không chịu chi phí vận chuyển chiều hoàn trong một số trường hợp, gồm khi người mua chọn tự sắp xếp trả hàng. | shopee-seller-return-refund-rights / Chi phí vận chuyển hàng hoàn — Mục 7 | {'audience': 'seller'} |
+| Q2 | Thực phẩm tươi sống hoặc đông lạnh có thời hạn gửi yêu cầu trả hàng bao lâu và ngoại lệ nào? | Thực phẩm tươi sống hoặc đông lạnh có thời hạn 24 giờ từ khi đơn cập nhật giao hàng thành công, trừ lý do chưa nhận hàng. | shopee-return-refund-general / Thời hạn gửi yêu cầu | Không |
+| Q3 | Biểu mẫu gửi yêu cầu trả hàng hoàn tiền cần điền thông tin và bằng chứng gì? | Người mua cần chọn sản phẩm, lý do khiếu nại, phương án xử lý nếu hệ thống yêu cầu, điền mô tả, hình ảnh hoặc video bằng chứng và email liên hệ. | shopee-submit-return-request / Gửi từ đơn hàng | Không |
+| Q4 | Liệt kê ba hình thức gửi hàng hoàn trả và hình thức nào miễn phí trả hàng. | Ba hình thức là đơn vị vận chuyển đến lấy, trả tại bưu cục được hệ thống đề xuất và tự sắp xếp. Hai hình thức đầu miễn phí trả hàng; tự sắp xếp thì người mua thanh toán trước phí. | shopee-return-shipping-fees / Ba hình thức gửi hàng | Không |
+| Q5 | Thanh toán bằng thẻ tín dụng hoặc ghi nợ thì tiền hoàn mất bao lâu sau khi Shopee chấp nhận hoàn tiền? | Với thẻ tín dụng hoặc ghi nợ, thời gian hoàn tiền là 7-14 ngày làm việc, tùy ngân hàng, tính sau khi Shopee chấp nhận hoàn tiền. | shopee-refund-timing / Bảng thời gian nhận tiền hoàn | Không |
 
 Q1 bỏ vai trò khỏi câu chữ nhưng phiên làm việc có audience=seller. Thông tin
 miễn phí chiều hoàn cho shop khác với việc người mua ứng phí. Hai quy định ở hai
@@ -142,22 +143,22 @@ LLM sinh văn bản. Proxy agent kiểm marker trong output nhưng **không tự
 
 | # | Fixed: hạng chứng cứ / điểm | Recursive: hạng chứng cứ / điểm | Heading: hạng chứng cứ / điểm |
 |---|---|---|---|
-| Q1 | 1 / 2 | 1 / 2 | 2 / 1 |
+| Q1 | - / 0 | - / 0 | - / 0 |
 | Q2 | - / 0 | - / 0 | - / 0 |
 | Q3 | - / 0 | - / 0 | - / 0 |
-| Q4 | - / 0 | 3 / 1 | - / 0 |
+| Q4 | - / 0 | - / 0 | - / 0 |
 | Q5 | - / 0 | - / 0 | - / 0 |
 
 ### A/B Q1 trên cả ba chiến lược
 
 | Chiến lược | Filter | Top-3 với score | Audience theo thứ tự | Hạng chứng cứ |
 |---|---|---|---|---|
-| fixed_size | seller | seller-phan-hoi#1 (0.0707); seller-phan-hoi#0 (0.0106) | seller, seller | 1 |
-| fixed_size | Không lọc | buyer-nhan-tien#0 (0.2434); buyer-gui-hang#1 (0.1083); seller-phan-hoi#1 (0.0707) | buyer, buyer, seller | 3 |
-| recursive | seller | seller-phan-hoi#1 (0.1759); seller-phan-hoi#0 (-0.0091) | seller, seller | 1 |
-| recursive | Không lọc | seller-phan-hoi#1 (0.1759); buyer-nhan-tien#0 (0.0537); buyer-gui-hang#0 (0.0265) | seller, buyer, buyer | 1 |
-| heading | seller | seller-phan-hoi#0 (0.0405); seller-phan-hoi#1 (0.0195); seller-phan-hoi#2 (-0.1129) | seller, seller, seller | 2 |
-| heading | Không lọc | buyer-dieu-kien#2 (0.2257); buyer-dieu-kien#0 (0.1388); buyer-nhan-tien#1 (0.1355) | buyer, buyer, buyer | Không có |
+| fixed_size | seller | shopee-seller-return-refund-rights#2 (0.1250); shopee-seller-return-refund-rights#0 (0.0159); shopee-seller-return-refund-rights#1 (-0.0006) | seller, seller, seller | Không có |
+| fixed_size | Không lọc | shopee-handle-return-request#1 (0.1759); shopee-refund-timing#1 (0.1504); shopee-return-refund-general#0 (0.1460) | buyer, buyer, buyer | Không có |
+| recursive | seller | shopee-seller-return-refund-rights#3 (0.0824); shopee-seller-return-refund-rights#7 (0.0824); shopee-seller-return-refund-rights#11 (0.0824) | seller, seller, seller | Không có |
+| recursive | Không lọc | shopee-return-refund-general#1 (0.2055); shopee-refund-timing#0 (0.1646); shopee-instant-refund-offer#0 (0.1628) | buyer, buyer, buyer | Không có |
+| heading | seller | shopee-seller-return-refund-rights#1 (0.2342); shopee-seller-return-refund-rights#9 (0.1723); shopee-seller-return-refund-rights#5 (0.1102) | seller, seller, seller | Không có |
+| heading | Không lọc | shopee-return-refund-general#6 (0.2864); shopee-refund-timing#3 (0.2718); shopee-seller-return-refund-rights#1 (0.2342) | buyer, buyer, seller | Không có |
 
 Filter thay đổi danh sách ở cả ba chiến lược và loại toàn bộ buyer khi chọn seller.
 Với recursive, đáp án đã có top-1 khi không lọc nên điểm không tăng, dù độ thuần
@@ -205,7 +206,7 @@ seller, giữ benchmark cố định và chạy model đa ngữ với cache nộ
 |---|---|---|
 | Dữ liệu | Chưa chốt /10 | 5 file đủ metadata nhưng là bản tóm lược; xem provenance |
 | Chiến lược | 12/15 | Có baseline và ba cấu hình; cần thành viên chạy độc lập |
-| Retrieval | 3/10 | Proxy với mock; cần chấm nội dung agent |
+| Retrieval | 0/10 | Proxy với mock; cần chấm nội dung agent |
 | Demo | Chưa chấm /5 | Đã có kịch bản, chưa trình bày |
 | Tổng | Chưa chốt /40 | Không tự nhận điểm cho phần chưa hoàn thành |
 

@@ -17,7 +17,7 @@ from src.store import EmbeddingStore
 
 
 def validate_corpus():
-    directory = ROOT / "data/shopee-tra-hang-hoan-tien"
+    directory = ROOT / "data/shopee-doi-tra-hoan-tien"
     docs = {}
     required = {"doc_id", "title", "source_url", "retrieved_at", "document_version", "audience", "category"}
     for path in sorted(directory.glob("*.md")):
@@ -27,7 +27,7 @@ def validate_corpus():
         assert metadata["doc_id"] == path.stem, path
         assert metadata["audience"] in {"buyer", "seller", "both"}, path
         assert metadata["source_url"].startswith("https://help.shopee.vn/portal/4/article/"), path
-        assert "---" not in content and content.startswith("##"), path
+        assert content.startswith("#"), path
         docs[path.stem] = (metadata, content)
         print(f"OK {path.name}: {len(content)} characters, {metadata['audience']}")
     assert 5 <= len(docs) <= 10

@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +26,9 @@ from src.store import EmbeddingStore
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_STRATEGY = "recursive"  # Cuong; Dat: fixed_size; Trang: heading.
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def normalize(text):
@@ -197,7 +201,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strategy", choices=["fixed_size", "recursive", "heading", "all"], default=DEFAULT_STRATEGY)
     parser.add_argument("--provider", choices=["mock", "local", "openai", "gemini"], default=os.getenv("EMBEDDING_PROVIDER", "mock"))
-    parser.add_argument("--data-dir", type=Path, default=ROOT / "data/shopee-tra-hang-hoan-tien")
+    parser.add_argument("--data-dir", type=Path, default=ROOT / "data/shopee-doi-tra-hoan-tien")
     parser.add_argument("--chunk-size", type=int, default=500)
     parser.add_argument("--output", type=Path, default=ROOT / "ket_qua_benchmark.txt")
     args = parser.parse_args()

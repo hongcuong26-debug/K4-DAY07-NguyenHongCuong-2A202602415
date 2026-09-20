@@ -19,7 +19,7 @@ mine = personal["runs"][0]
 assert mine["strategy"] == "recursive"
 assert mine["corpus_sha256"] == runs["recursive"]["corpus_sha256"]
 assert mine["queries"] == runs["recursive"]["queries"]
-corpus = {p.stem: read_document(p) for p in sorted((ROOT / "data/shopee-tra-hang-hoan-tien").glob("*.md"))}
+corpus = {p.stem: read_document(p) for p in sorted((ROOT / "data/shopee-doi-tra-hoan-tien").glob("*.md"))}
 pairs = [
     ("Tôi muốn gửi lại món hàng vì bị hỏng.", "Sản phẩm lỗi nên tôi đề nghị lấy lại tiền.", "cao"),
     ("Tiền được chuyển lại về thẻ đã thanh toán.", "Khoản hoàn trả đi vào tài khoản thẻ dùng lúc mua.", "cao"),
@@ -31,7 +31,8 @@ embedder = MockEmbedder()
 pair_results = [{"a": a, "b": b, "prediction": prediction,
                  "actual": compute_similarity(embedder(a), embedder(b))} for a, b, prediction in pairs]
 baseline = {name: ChunkingStrategyComparator().compare(corpus[name][1], chunk_size=500)
-            for name in ["buyer-dieu-kien", "buyer-gui-hang", "seller-phan-hoi"]}
+            for name in ["shopee-return-refund-general", "shopee-return-shipping-fees",
+                         "shopee-seller-return-refund-rights"]}
 stats = {"backend": "MockEmbedder md5-64-v1", "warmup": {str(o): len(FixedSizeChunker(500, o).chunk('a' * 10000)) for o in [50, 100]},
          "baseline": baseline, "pairs": pair_results}
 (REPORT / "analysis_stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -156,10 +157,11 @@ Có **{correct}/5** câu có chunk đủ bằng chứng trong top-3. Điểm ch�
 đây là điểm hỗ trợ đối chiếu, không phải điểm giảng viên hay chứng minh LLM trả lời
 đúng. Xem toàn bộ câu trả lời và nguồn trong [ket_qua_benchmark.txt](../ket_qua_benchmark.txt).
 
-Q5 là failure case rõ: lấy được buyer-nhan-tien nhưng lấy section về ví và lưu ý,
-không lấy đoạn thẻ. Doc-only báo hit nhưng câu trả lời không có mốc cần hỏi. Đề xuất:
-embedding đa ngữ thật, truy vấn lại theo thẻ và reranker; sau đó đo lại trên cùng
-gold, không chỉnh gold theo kết quả truy xuất.
+Q1 là failure case rõ của mock + recursive: filter seller đưa đúng file người bán vào
+top-3, nhưng các chunk được xếp hạng không chứa đủ cụm chứng cứ cần thiết. Doc-only
+báo hit, còn evidence-score vẫn bằng 0. Đề xuất: dùng embedding đa ngữ thật, tăng
+overlap hoặc dùng heading chunker có gắn tiêu đề cho mọi mảnh con; sau đó đo lại trên
+cùng gold, không chỉnh gold theo kết quả truy xuất.
 
 Qua so sánh cấu hình của Trang, heading giúp mỗi mảnh con còn tên mục. Đây là quan
 sát từ thí nghiệm tại máy này, không phải trải nghiệm đã nghe Trang thuyết trình.
@@ -222,7 +224,7 @@ thay bằng trích đoạn được phép trước khi coi CP2 hoàn tất đầ
 
 ### Metadata schema
 
-{table(['Trường', 'Kiểu', 'Ví dụ', 'Mục đích'], [('doc_id','str','seller-phan-hoi','Định danh file gốc, delete và đánh giá'),('title','str','Phản hồi và trách nhiệm của người bán','Đọc hiểu nguồn'),('source_url','str URL','https://help.shopee.vn/portal/4/article/77251','Truy vết nguồn chính thức'),('retrieved_at','str ISO date','2026-09-20','Thời điểm kiểm tra'),('document_version','str','2026-03-11 hoặc not-stated','Phân biệt hiệu lực với ngày crawl'),('audience','str enum','buyer / seller','Lọc trước retrieval'),('category','str','dispute','Lọc chủ đề hẹp'),('language','str','vi','Lọc ngôn ngữ'),('collection_method','str','web-read-and-factual-summary','Không nhầm bản ghi với nguyên văn'),('source_sections','str','5; 7.2; 12.2','Đối chiếu đúng mục nguồn')])}
+{table(['Trường', 'Kiểu', 'Ví dụ', 'Mục đích'], [('doc_id','str','shopee-seller-return-refund-rights','Định danh file gốc, delete và đánh giá'),('title','str','Quyền và trách nhiệm của người bán khi trả hàng, hoàn tiền','Đọc hiểu nguồn'),('source_url','str URL','https://help.shopee.vn/portal/4/article/77251','Truy vết nguồn chính thức'),('retrieved_at','str ISO date','2026-09-20','Thời điểm kiểm tra'),('document_version','str','2026-03-11 hoặc not-stated','Phân biệt hiệu lực với ngày crawl'),('audience','str enum','buyer / seller','Lọc trước retrieval'),('category','str','seller-rights','Lọc chủ đề hẹp'),('language','str','vi','Lọc ngôn ngữ')])}
 
 ## 2. Thiết kế chiến lược
 
